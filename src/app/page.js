@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <Banner/>
-  <BannerTwo/>
-  <BannerTwo/>
+  {/* <BannerTwo/> */}
+  {/* <BannerTwo/> */}
     </>
 
   );
