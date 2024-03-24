@@ -188,7 +188,7 @@ gsap.timeline({
     start: "0% 95%",
     end: "50% 50%",
     scrub: true,
-   markers:true
+
   },
 }).fromTo(
   ".rightbox",
