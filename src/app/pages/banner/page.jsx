@@ -119,7 +119,7 @@ useEffect(() => {
     "#fanta",
     {
       y: "100%",
-      x: "-30rem",
+      x: "-35rem",
       scale: 1.3,
       rotateZ:"180deg",
       ease: "power1.out",
@@ -258,7 +258,7 @@ gsap.timeline({
  
 
   </div> 
-  {/* <h1 className='text-[3rem] text-center'>Model   two</h1> */}
+
 <div className='w-full h-screen relative bg-black text-white'>
 
 
