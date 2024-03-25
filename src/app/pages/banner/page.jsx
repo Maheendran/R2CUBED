@@ -98,8 +98,8 @@ useEffect(() => {
   tl.to(
     "#fanta",
     {
-      y: "135%",
-      x: "-10rem",
+      y: "145%",
+      x: "-25rem",
       scale: .1,
       rotateZ:"0deg",
       ease: "power1.out",
