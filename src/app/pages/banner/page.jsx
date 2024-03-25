@@ -119,7 +119,7 @@ useEffect(() => {
     "#fanta",
     {
       y: "100%",
-      x: "-35rem",
+      x: "-25rem",
       scale: 1.3,
       rotateZ:"180deg",
       ease: "power1.out",
