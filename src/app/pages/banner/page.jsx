@@ -112,7 +112,7 @@ useEffect(() => {
         start: "15% 30%",
         end: "25% 15%",
         scrub: true,
-        markers: true,
+       
     }})
     tls.to("#navbar", {
       ease: "power1.out",
@@ -241,8 +241,8 @@ gsap.timeline({
       </div>
     </div>
   
-<div className='third w-full h-screen bg-red-300'></div>
-<div className='third w-full h-screen bg-blue-300'></div>
+<div className='third w-full h-screen navbg'></div>
+<div className='third w-full h-screen navbg'></div>
   </div> 
 
 
