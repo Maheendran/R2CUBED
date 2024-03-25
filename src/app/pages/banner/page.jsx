@@ -100,7 +100,7 @@ useEffect(() => {
     {
       y: "145%",
       x: "-38rem",
-      scale: .12,
+      scale: .15,
       rotateZ:"0deg",
       ease: "power1.out",
     },
