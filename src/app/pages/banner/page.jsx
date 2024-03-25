@@ -4,35 +4,19 @@ import gsap from 'gsap'
 import Lenis from "@studio-freight/lenis";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Spline from '@splinetool/react-spline'
-
+import Loading from '@/app/pages/loading/page'
 
 import { Application } from "@splinetool/runtime";
 
-const Page = () => {
-    // useEffect(() => {
-  
-    //     gsap.registerPlugin(ScrollTrigger);
-  
-    //     var tl = gsap.timeline({scrollTrigger:{
-    //       trigger: ".two",
-    //       start: "top 95%",
-    //       end: "40% 80%",
-    //       scrub: true,
-    //       markers: true,
-    //   }})
-    // .to("#fanta", { 
-    //   position:"absolute",
-    //   left:"-50rem",
-    //   bottom:0,     
-    //    zIndex:100000000,
-    //    scale:0.18
-    // }, 0)
-    
-      
-      
 
-  
-  
+const Page = () => {
+
+  const [loading, setLoading] = useState(true);
+  const [splineloading, setSplineLoading] = useState(true);
+  const splineRef = useRef(null);
+
+
+
 
 
 
@@ -48,54 +32,38 @@ const Page = () => {
       }, []);
 
       // ========================
+  const canvasRef = useRef(null);
+      useEffect(() => {
 
-      // useEffect(() => {
-
-      //   const canvas = canvasRef.current;
+        const canvas = canvasRef.current;
     
  
-      //   const spline = new Application(canvas);
+        const spline = new Application(canvas);
     
 
-      //   spline
-      //     .load("https://prod.spline.design/fnfhq02hObPhUtYU/scene.splinecode")
-      //     .then(() => {
-        
-         
+        spline
+          .load("https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode")
+          .then(() => {
+        setTimeout(()=>{
+          setSplineLoading(false)
+        },2000)
+           
   
-      //       gsap.registerPlugin(ScrollTrigger);
-    
-      //       gsap
-      //         .timeline({
-      //           scrollTrigger: {
-      //             trigger: ".two",
-      //             start: "top 60%",
-      //             end: "bottom bottom",
-      //             scrub: true,
-      //           },
-      //         })
-             
-      //         .to(keyboard.rotation, { x: -Math.PI / 54, y: -Math.PI / 5 }, 0)
-      //         .to(keyboard.position, { x: 1750, y: -500 }, 0)
-      //         .to(keyboard.scale, { x: 0.9, y: 0.9, z: 0.7 }, 0);
-    
-        
-    
-      //     })
+          })
     
     
     
     
-      //     .catch((error) => {
-      //       console.error("Error loading scene:", error);
-      //     });
+          .catch((error) => {
+            console.error("Error loading scene:", error);
+          });
     
-      //   // Cleanup function
-      //   return () => {
-      //     // Dispose the spline application to release resources
-      //     spline.dispose();
-      //   };
-      // }, []);
+        // Cleanup function
+        return () => {
+          // Dispose the spline application to release resources
+          spline.dispose();
+        };
+      }, []);
 // ============
 useEffect(() => {
   function isMobile() {
@@ -108,10 +76,10 @@ useEffect(() => {
   var tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".two",
-      start: "0% 95%",
-      end: "70% 50%",
+      start: "0% 100%",
+      end: "100% 0%",
       scrub: true,
-      // markers: true,
+ 
     },
   });
 
@@ -121,19 +89,30 @@ useEffect(() => {
       y: "100%",
       x: "-25rem",
       scale: 1.3,
-      rotateZ:"180deg",
+      rotateZ:"150deg",
+    
+      ease: "power1.out",
+    },
+  
+  )
+  tl.to(
+    "#fanta",
+    {
+      y: "145%",
+      x: "-51rem",
+      scale: .15,
+      rotateZ:"0deg",
       ease: "power1.out",
     },
   
   );
-
 // navbar
       var tls = gsap.timeline({scrollTrigger:{
-        trigger: ".one",
-        start: "90% 40%",
-        end: "100% 10%",
+        trigger: ".third",
+        start: "15% 30%",
+        end: "25% 15%",
         scrub: true,
-        // markers: true,
+        markers: true,
     }})
     tls.to("#navbar", {
       ease: "power1.out",
@@ -207,33 +186,28 @@ gsap.timeline({
   }
 );
 }, []);
-      const canvasRef = useRef(null);
 
-  
   return (
 
     <>
-        <div id="main" className='relative text-white mainbg max-w-[100vw] '>
+
+       {  splineloading && <Loading/> }
+          <div id="main" className='relative text-white mainbg max-w-[100vw] '>
     <div className="one w-full h-screen">
 
-      <div id='navbar' className=' flex justify-between w-full h-[9vh] navbg'>
-        <div className='w-[10%] my-auto px-2'>
-          <p>Logo</p>
-        </div>
-        <div className='w-fit flex gap-3 my-auto px-4'>
-          <p>Home</p>
-          <p>About</p>
-          <p>Contact</p>
-          <p>Home</p>
-        </div>
-      </div>
+  
     <div className='absolute z-[100000]'>
-      <Spline scene='https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode'></Spline>
+      {/* <Spline   
+                               scene='https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode'></Spline> */}
+
+<div className="  z-[-1]">
+          <canvas ref={canvasRef}   id="canvas3d"></canvas>
+        </div>
     </div>
 
 
       <div id='fanta'   className=' w-[100vw] h-[100vh] absolute   z-[50] '>
-    <Spline className='w-full h-full  ' id='box' scene='https://prod.spline.design/MS5FTSe7TtmbHQzZ/scene.splinecode'/> 
+    <Spline className='w-full h-full  ' id='box' scene='https://prod.spline.design/ThZV623jazw2LSZ1/scene.splinecode'/> 
       
 </div>
 
@@ -242,7 +216,7 @@ gsap.timeline({
 
 
 
-    <div className="two w-full h-fit flex flex-col sm:flex-row ">
+    <div className="two w-full h-fit flex flex-col sm:flex-row overflow-hidden">
   
 
       <div className="w-full sm:w-1/2 h-[50vh] sm:h-screen">
@@ -254,12 +228,36 @@ gsap.timeline({
         <h1 className='text-[5rem]'>Heading</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, excepturi sed, itaque placeat id natus soluta veniam obcaecati qui a laborum laboriosam dolorem illum labore sit, voluptates commodi neque dolores tempore temporibus deleniti? Nobis, ratione hic error quis cum neque nulla laudantium nostrum sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum totam quia non! Labore, neque! Amet voluptatem illo similique recusandae! Ex quaerat quibusdam asperiores, ducimus tempore magni labore. Tenetur voluptas, quos ex repellendus provident mollitia laboriosam adipisci alias a impedit, cum accusamus rerum delectus eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni aspernatur quod distinctio.</p>
       </div>
+        <div id='navbar' className=' flex justify-between w-full h-[9vh] navbg'>
+        <div className='w-[5rem] h-full  my-auto px-2'>
+       <img className='w-full h-full py-[2px]' src="./logo.png" alt="" />
+        </div>
+        <div className='w-fit flex gap-3 my-auto px-4'>
+          <p>Home</p>
+          <p>About</p>
+          <p>Contact</p>
+          <p>Home</p>
+        </div>
+      </div>
     </div>
- 
-
+  
+<div className='third w-full h-screen bg-red-300'></div>
+<div className='third w-full h-screen bg-blue-300'></div>
   </div> 
 
-<div className='w-full h-screen relative bg-black text-white'>
+
+
+   </>
+
+
+
+  )
+}
+
+export default Page
+
+{/* ===================== */}
+{/* <div className='w-full h-screen relative bg-black text-white'>
 
 
     <div className='absolute z-[100] '>
@@ -285,14 +283,4 @@ gsap.timeline({
   </div>
 
 
-</div>
-
-   </>
-
-
-
-  )
-}
-
-export default Page
-
+</div> */}
