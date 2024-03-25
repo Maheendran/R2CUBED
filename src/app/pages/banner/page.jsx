@@ -118,12 +118,13 @@ useEffect(() => {
   tl.to(
     "#fanta",
     {
-      top: "50%",
-      left: "-30rem",
+      y: "100%",
+      x: "-30rem",
       scale: 1.3,
-      rotateZ:"180deg"
+      rotateZ:"180deg",
+      ease: "power1.out",
     },
-    "orange"
+  
   );
 
 // navbar
@@ -135,7 +136,7 @@ useEffect(() => {
         // markers: true,
     }})
     tls.to("#navbar", {
-
+      ease: "power1.out",
               top:0,
                  position:"fixed",
        zIndex:1000000000
@@ -155,10 +156,10 @@ gsap.timeline({
 .to(
   "#fantaTwo",
   {
-    top: "150%",
-
+    y: "150%",
     scale: .01,
-    rotateZ:"180deg"
+    rotateZ:"180deg",
+    ease: "power1.out",
   },
   
 )
@@ -173,12 +174,15 @@ gsap.timeline({
 }).fromTo(
   ".leftbox",
   {
-    left:"-100rem"
-      },
-  {
-left:"1rem",
-transition:"0.1s ease",
+    x: "-100rem", // Move from -100rem
+    opacity: 0 // Start with opacity 0 for a fade-in effect
   },
+  {
+    x: "1rem", // Move to 0rem
+    opacity: 1, // Fade in completely
+    ease: "power1.out" // Adjust easing for smoother movement
+  }
+
 
 );
 
@@ -193,15 +197,14 @@ gsap.timeline({
 }).fromTo(
   ".rightbox",
   {
-    top:"-100rem"
-
-      },
-  {
-    right:0,
-top:"0rem",
-transition:"0.1s ease",
+    x: "100rem", // Move from -100rem
+    opacity: 0 // Start with opacity 0 for a fade-in effect
   },
-
+  {
+    x: "-1rem", // Move to 0rem
+    opacity: 1, // Fade in completely
+    ease: "power1.out" // Adjust easing for smoother movement
+  }
 );
 }, []);
       const canvasRef = useRef(null);
@@ -248,7 +251,7 @@ transition:"0.1s ease",
         </svg>
       </div> 
       <div className="w-full sm:w-1/2 h-fit my-auto">
-        <h1 className='text-[5rem]'>Flavour Updated</h1>
+        <h1 className='text-[5rem]'>Heading</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, excepturi sed, itaque placeat id natus soluta veniam obcaecati qui a laborum laboriosam dolorem illum labore sit, voluptates commodi neque dolores tempore temporibus deleniti? Nobis, ratione hic error quis cum neque nulla laudantium nostrum sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum totam quia non! Labore, neque! Amet voluptatem illo similique recusandae! Ex quaerat quibusdam asperiores, ducimus tempore magni labore. Tenetur voluptas, quos ex repellendus provident mollitia laboriosam adipisci alias a impedit, cum accusamus rerum delectus eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni aspernatur quod distinctio.</p>
       </div>
     </div>
@@ -273,11 +276,11 @@ transition:"0.1s ease",
   
 
   <div className='leftbox absolute  top-0 bottom-0 w-[45%] h-fit my-auto '>
-    <h1 className='text-[3rem] text-center mt-5 text-neutral-200'>Dummy</h1>
+    <h1 className='text-[3rem] text-center mt-5 text-neutral-200'>Heading</h1>
     <p className='text-[1rem] text-justify text-neutral-400 '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, excepturi sed, itaque placeat id natus soluta veniam obcaecati qui a laborum laboriosam dolorem illum labore sit, voluptates commodi neque dolores tempore temporibus deleniti? Nobis, ratione hic error quis cum neque nulla laudantium nostrum sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum totam quia non! Labore, neque! Amet voluptatem illo similique recusandae! Ex quaerat quibusdam asperiores, ducimus tempore magni labore. Tenetur voluptas, quos ex repellendus provident mollitia laboriosam adipisci alias a impedit, cum accusamus rerum delectus eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni aspernatur quod distinctio.</p>
   </div>
-  <div className='rightbox absolute    right-[1rem] bottom-0  w-[45%] h-fit my-auto '>
-    <h1 className='text-[3rem] text-center mt-5 text-neutral-200'>Dummy</h1>
+  <div className='rightbox absolute    right-[1rem] bottom-0 top-0  w-[45%] h-fit my-auto '>
+    <h1 className='text-[3rem] text-center mt-5 text-neutral-200'>Heading</h1>
     <p className='text-[1rem] text-justify text-neutral-400'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, excepturi sed, itaque placeat id natus soluta veniam obcaecati qui a laborum laboriosam dolorem illum labore sit, voluptates commodi neque dolores tempore temporibus deleniti? Nobis, ratione hic error quis cum neque nulla laudantium nostrum sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum totam quia non! Labore, neque! Amet voluptatem illo similique recusandae! Ex quaerat quibusdam asperiores, ducimus tempore magni labore. Tenetur voluptas, quos ex repellendus provident mollitia laboriosam adipisci alias a impedit, cum accusamus rerum delectus eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni aspernatur quod distinctio.</p>
   </div>
 
