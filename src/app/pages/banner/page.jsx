@@ -46,7 +46,7 @@ const Page = () => {
           .then(() => {
         setTimeout(()=>{
           setSplineLoading(false)
-        },2000)
+        },1500)
            
   
           })
