@@ -235,7 +235,7 @@ const Page = () => {
         </div>
 
         <div className="third w-full h-screen mainbg"></div>
-        <div className="third w-full h-screen mainbg"></div>
+        <div className="third w-full h-screen mainbg border"></div>
       </div>
     </>
   );
