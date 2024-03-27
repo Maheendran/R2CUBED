@@ -99,7 +99,7 @@ const Page = () => {
     .to("#logo", {
       ease: "power1.out",
       // top: 0,
-    top:"3rem",
+    top:"0rem",
     // margin:"auto",
       zIndex: 1000000000,
     });
