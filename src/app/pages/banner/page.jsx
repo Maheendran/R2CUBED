@@ -99,7 +99,7 @@ const Page = () => {
     .to("#logo", {
       ease: "power1.out",
       // top: 0,
-    top:"4.8rem",
+    top:"4.9rem",
     // margin:"auto",
       zIndex: 1000000000,
     });
@@ -221,7 +221,7 @@ const Page = () => {
             id="navbar"
             className=" flex justify-between w-full h-[8.5vh] navbg"
           >
-            <div className=" w-[3.5rem] h-full relative my-auto px-2">
+            <div className=" w-[3.3rem] h-full relative my-auto px-2">
               <img  id="logo"  className="absolute top-[-3rem] w-full h-full py-[2px]" src="./logo.png" alt="" />
             </div>
 
