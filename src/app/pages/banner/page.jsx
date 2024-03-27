@@ -220,7 +220,7 @@ const Page = () => {
             id="navbar"
             className=" flex justify-between w-full h-[9vh] navbg"
           >
-            <div className=" w-[4rem] h-full relative my-auto px-2">
+            <div className=" w-[3.5rem] h-full relative my-auto px-2">
               <img  id="logo"  className="absolute top-[-5rem] w-full h-full py-[2px]" src="./logo.png" alt="" />
             </div>
 
