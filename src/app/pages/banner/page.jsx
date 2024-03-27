@@ -98,8 +98,9 @@ const Page = () => {
     })
     .to("#logo", {
       ease: "power1.out",
-      top: 0,
-    bottom:0,
+      // top: 0,
+    top:"4.5rem",
+    // margin:"auto",
       zIndex: 1000000000,
     });
 
@@ -221,7 +222,7 @@ const Page = () => {
             className=" flex justify-between w-full h-[9vh] navbg"
           >
             <div className=" w-[3.5rem] h-full relative my-auto px-2">
-              <img  id="logo"  className="absolute top-[-5rem] w-full h-full py-[2px]" src="./logo.png" alt="" />
+              <img  id="logo"  className="absolute top-[-3rem] w-full h-full py-[2px]" src="./logo.png" alt="" />
             </div>
 
             <div className="w-fit flex gap-3 my-auto px-4">
@@ -234,7 +235,7 @@ const Page = () => {
         </div>
 
         <div className="third w-full h-screen bg-red-300"></div>
-        <div className="third w-full h-screen bg-blue-300"></div>
+        {/* <div className="third w-full h-screen bg-blue-300"></div> */}
       </div>
     </>
   );
