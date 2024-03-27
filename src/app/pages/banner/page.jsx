@@ -234,8 +234,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="third w-full h-screen bg-red-300"></div>
-        {/* <div className="third w-full h-screen bg-blue-300"></div> */}
+        <div className="third w-full h-screen mainbg"></div>
+        <div className="third w-full h-screen mainbg"></div>
       </div>
     </>
   );
