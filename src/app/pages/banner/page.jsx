@@ -31,28 +31,36 @@ const Page = () => {
 
   // ========================
   const canvasRef = useRef(null);
-  // useEffect(() => {
-  //   const canvas = canvasRef.current;
+  useEffect(() => {
 
-  //   const spline = new Application(canvas);
+     
+       const canvas = canvasRef.current;
 
-  //   spline
-  //     .load("https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode")
-  //     .then(() => {
-  //       setTimeout(() => {
-  //         setSplineLoading(false);
-  //       }, 1500);
-  //     })
+    const spline = new Application(canvas);
 
-  //     .catch((error) => {
-  //       console.error("Error loading scene:", error);
-  //     });
+    spline
+      .load("https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode")
+      .then(() => {
+        setTimeout(() => {
+          setSplineLoading(false);
+        
+        }, 1500);
+    
+      })
 
-  //   return () => {
+      .catch((error) => {
+        console.error("Error loading scene:", error);
+      });
 
-  //     spline.dispose();
-  //   };
-  // }, []);
+    
+      return () => {
+
+        spline.dispose();
+      }
+     
+   
+   
+  }, []);
   // ============
   useEffect(() => {
     function isMobile() {
