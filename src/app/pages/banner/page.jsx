@@ -309,7 +309,7 @@ const Page = () => {
           </div>
         </div>
         {/* ===============   third page  =========================================================== */}
-        <div className="third w-full h-screen mainbg relative border">
+        <div className="third w-full h-screen mainbg relative ">
           <Link href="/video">
             <div
               ref={parentRef}
