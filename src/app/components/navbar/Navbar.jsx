@@ -66,7 +66,7 @@ duration:4,
         enlarge ? "enlargescreen" : "smscreen"
       }  navbg`}
     >
-      <div className="border absolute  w-[3rem] h-[3.5rem]    px-2">
+      <div className="border absolute  w-[3rem] h-[8vh]    px-2">
         <img
           id="logo"
           className=" w-full h-full  py-[2px]"
