@@ -69,7 +69,7 @@ duration:4,
       <div className=" w-[3.3rem] h-full relative my-auto px-2">
         <img
           id="logo"
-          className="absolute top-[-3rem] w-full h-[4rem] py-[2px]"
+          className="absolute top-[-3rem] w-full h-[3rem] py-[2px]"
           src="./logo.png"
           alt=""
         />
