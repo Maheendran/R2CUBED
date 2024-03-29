@@ -31,29 +31,28 @@ const Page = () => {
 
   // ========================
   const canvasRef = useRef(null);
-  useEffect(() => {
-    const canvas = canvasRef.current;
+  // useEffect(() => {
+  //   const canvas = canvasRef.current;
 
-    const spline = new Application(canvas);
+  //   const spline = new Application(canvas);
 
-    spline
-      .load("https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode")
-      .then(() => {
-        setTimeout(() => {
-          setSplineLoading(false);
-        }, 1500);
-      })
+  //   spline
+  //     .load("https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode")
+  //     .then(() => {
+  //       setTimeout(() => {
+  //         setSplineLoading(false);
+  //       }, 1500);
+  //     })
 
-      .catch((error) => {
-        console.error("Error loading scene:", error);
-      });
+  //     .catch((error) => {
+  //       console.error("Error loading scene:", error);
+  //     });
 
-    // Cleanup function
-    return () => {
-      // Dispose the spline application to release resources
-      spline.dispose();
-    };
-  }, []);
+  //   return () => {
+
+  //     spline.dispose();
+  //   };
+  // }, []);
   // ============
   useEffect(() => {
     function isMobile() {
@@ -198,7 +197,7 @@ gsap.to(".parentBox",{
     gsap.to(".cursor", {
       left: "10rem",
       top: "10rem",
-      duration: 1,
+      duration: 1.5,
       scale: 4.5,
       ease: "power4.out",
       zIndex:1
@@ -221,7 +220,7 @@ gsap.to(".parentBox",{
     gsap.to(".cursor", {
       left: "-10rem",
       top: "-10rem",
-      duration: 1,
+      duration: 1.5,
       scale: 0.1,
       ease: "power3.out",
     });
@@ -258,7 +257,7 @@ gsap.to(".parentBox",{
            <div
               ref={parentRef}
          
-              className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10rem]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
+              className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
