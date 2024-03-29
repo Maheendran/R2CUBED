@@ -257,10 +257,10 @@ const Page = () => {
               >
                 <div
                   ref={textRef}
-                  className="w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+                  className="w-fit arrowparent h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
                 >
                   <GoArrowUpRight
-                    className="mx-auto"
+                    className="mx-auto arrow"
                     ref={arrowRef}
                     size={"3.9rem"}
                   />
@@ -309,7 +309,7 @@ const Page = () => {
           </div>
         </div>
         {/* ===============   third page  =========================================================== */}
-        <div className="third w-full h-screen mainbg relative">
+        <div className="third w-full h-screen mainbg relative border">
           <Link href="/video">
             <div
               ref={parentRef}
@@ -319,9 +319,9 @@ const Page = () => {
             >
               <div
                 ref={textRefTwo}
-                className="w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+                className="arrowparent w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
               >
-                <GoArrowUpRight ref={arrowRef} size={"3.9rem"} />
+                <GoArrowUpRight ref={arrowRef}   className="mx-auto arrow" size={"3.9rem"} />
                 <p className=" m-auto text-[1.3rem]">Play</p>
               </div>
 
@@ -329,7 +329,7 @@ const Page = () => {
             </div>
           </Link>
         </div>
-        <div className="third w-full h-screen mainbg "></div>
+        <div className="third w-full border h-screen mainbg "></div>
       </div>
     </>
   );

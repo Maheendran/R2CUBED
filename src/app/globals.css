@@ -203,3 +203,9 @@ background-color: #fff;
       stroke-dashoffset: -150; 
     }
   }
+  .arrow{
+    transition: 0.5s ease-in-out;
+  }
+  .arrowparent:hover .arrow{
+    transform: rotate(45deg);
+  }
