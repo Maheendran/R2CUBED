@@ -68,7 +68,7 @@ const Page = () => {
 
     tl.to("#fanta", {
       y: "100%",
-      x: "-20rem",
+      x: "-25vw",
       scale: 1.3,
       rotateZ: "150deg",
 
@@ -76,7 +76,7 @@ const Page = () => {
     });
     tl.to("#fanta", {
       y: "145%",
-      x: "-37.5rem",
+      x: "-50.5vw",
       scale: 0.15,
       rotateZ: "0deg",
       ease: "power1.out",
