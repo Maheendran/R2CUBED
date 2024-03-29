@@ -62,11 +62,11 @@ duration:4,
     <div
       id="navbar"
       ref={navbarRef}
-      className={`border flex justify-between w-full h-[8.5vh]  ${
+      className={` flex justify-between w-full h-[8.5vh]  ${
         enlarge ? "enlargescreen" : "smscreen"
       }  navbg`}
     >
-      <div className="border absolute  w-[3rem] h-[8vh]    px-2">
+      <div className=" absolute  w-[3.3rem] h-[8vh]    px-2">
         <img
           id="logo"
           className=" w-full h-full  py-[2px]"
