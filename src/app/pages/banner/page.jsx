@@ -6,13 +6,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Spline from "@splinetool/react-spline";
 import Loading from "@/app/pages/loading/page";
 
+import { GoArrowUpRight } from "react-icons/go";
 import { Application } from "@splinetool/runtime";
-
+import Link from 'next/link';
 const Page = () => {
   const [loading, setLoading] = useState(true);
   const [splineloading, setSplineLoading] = useState(true);
   const splineRef = useRef(null);
-
+  const cursorRef = useRef(null);
+  const parentRef = useRef(null);
+  const textRef = useRef(null);
+  const textRefTwo = useRef(null);
+  
+  const arrowRef=useRef(null)
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time) {
@@ -82,27 +88,28 @@ const Page = () => {
       ease: "power1.out",
     });
     // navbar
-    var tls = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".third",
-        start: "15% 30%",
-        end: "25% 15%",
-        scrub: true,
-      },
-    })
-    .to("#navbar", {
-      ease: "power1.out",
-      top: 0,
-      position: "fixed",
-      zIndex: 1000000000,
-    })
-    .to("#logo", {
-      ease: "power1.out",
-      // top: 0,
-    top:"0rem",
-    // margin:"auto",
-      zIndex: 1000000000,
-    });
+    var tls = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".third",
+          start: "15% 30%",
+          end: "25% 15%",
+          scrub: true,
+        },
+      })
+      .to("#navbar", {
+        ease: "power1.out",
+        top: 0,
+        position: "fixed",
+        zIndex: 1000000000,
+      })
+      .to("#logo", {
+        ease: "power1.out",
+        // top: 0,
+        top: "0rem",
+        // margin:"auto",
+        zIndex: 1000000000,
+      });
 
     // ////////second section
 
@@ -165,6 +172,67 @@ const Page = () => {
         }
       );
   }, []);
+  // ====================
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+
+    gsap.to(".cursor", {
+      left: "-10rem",
+      top: "-10rem",
+      duration: 1,
+      scale: 0.1,
+      ease: "power3.out",
+    });
+  }, []);
+
+  const handleMouseEnter = (e) => {
+    const cursor = cursorRef.current;
+gsap.to(".parentBox",{
+  scale:1.3,
+
+  duration: 1, // Adjust the duration of the animation
+  ease: 'elastic.out', // Adjust the ease function for the bouncing effect
+
+})
+    gsap.to(".cursor", {
+      left: "10rem",
+      top: "10rem",
+      duration: 1,
+      scale: 4.5,
+      ease: "power4.out",
+      zIndex:1
+    });
+    if (textRef.current) {
+      textRef.current.classList.add("textColor");
+   
+    }
+    if(textRefTwo.current){
+      textRefTwo.current.classList.add("textColor");
+    }
+  
+  };
+
+  const handleMouseLeave = (e) => {
+    const cursor = cursorRef.current;
+    gsap.to(".parentBox",{
+      scale:1
+    })
+    gsap.to(".cursor", {
+      left: "-10rem",
+      top: "-10rem",
+      duration: 1,
+      scale: 0.1,
+      ease: "power3.out",
+    });
+
+    if (textRef.current) {
+      textRef.current.classList.remove("textColor");
+    }
+    if(textRefTwo.current){
+      textRefTwo.current.classList.remove("textColor");
+    }
+  };
 
   return (
     <>
@@ -172,9 +240,6 @@ const Page = () => {
       <div id="main" className="relative text-white mainbg max-w-[100vw] ">
         <div className="one w-full h-screen">
           <div className="absolute z-[100000]">
-            {/* <Spline   
-                               scene='https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode'></Spline> */}
-
             <div className="  z-[-1]">
               <canvas ref={canvasRef} id="canvas3d"></canvas>
             </div>
@@ -186,6 +251,29 @@ const Page = () => {
               id="box"
               scene="https://prod.spline.design/ThZV623jazw2LSZ1/scene.splinecode"
             />
+          </div>
+
+          <div className="w-full h-screen relative z-[1000000]">
+          <Link href="/pages/form">
+           <div
+              ref={parentRef}
+         
+              className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10rem]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div
+              ref={textRef}
+                className="w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+              >
+                <GoArrowUpRight  className="mx-auto"  ref={arrowRef} size={"3.9rem"} />
+                <p   className=" m-auto text-[1.5rem]">Start Project</p>
+              </div>
+
+              <div className=" cursor bg-red-300" ref={cursorRef}></div>
+            </div>
+           </Link>
+          
           </div>
         </div>
 
@@ -222,7 +310,12 @@ const Page = () => {
             className=" flex justify-between w-full h-[8.5vh] navbg"
           >
             <div className=" w-[3.3rem] h-full relative my-auto px-2">
-              <img  id="logo"  className="absolute top-[-3rem] w-full h-full py-[2px]" src="./logo.png" alt="" />
+              <img
+                id="logo"
+                className="absolute top-[-3rem] w-full h-full py-[2px]"
+                src="./logo.png"
+                alt=""
+              />
             </div>
 
             <div className="w-fit flex gap-3 my-auto px-4">
@@ -233,8 +326,28 @@ const Page = () => {
             </div>
           </div>
         </div>
+{/* ===============   third page  =========================================================== */}
+        <div className="third w-full h-screen mainbg relative">
+        <Link href="/pages/video">
+           <div
+              ref={parentRef}
+         
+              className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10rem]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-400 rounded-full  "
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div
+              ref={textRefTwo}
+                className="w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+              >
+                <GoArrowUpRight   ref={arrowRef} size={"3.9rem"} />
+                <p   className=" m-auto text-[1.5rem]">Play</p>
+              </div>
 
-        <div className="third w-full h-screen mainbg"></div>
+              <div className=" cursor bg-red-300" ref={cursorRef}></div>
+            </div>
+           </Link>
+        </div>
         <div className="third w-full h-screen mainbg border"></div>
       </div>
     </>
