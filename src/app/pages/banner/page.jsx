@@ -353,12 +353,7 @@ const Page = () => {
 
     </div>
     <Footer/>
-    <div className="w-full h-screen bg-red-300">
-    <p className="text-[15rem] font-bold">
-          R2CUBED
-        </p>
-          
-    </div>
+
       </div>
     </>
   );
