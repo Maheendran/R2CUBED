@@ -31,11 +31,12 @@ const Page = () => {
     const spline = new Application(canvas);
 
     spline
-      .load("https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode")
+      .load("https://prod.spline.design/LitUGRCkhTxntE3X/scene.splinecode")
       .then(() => {
-        setTimeout(() => {
-          setSplineLoading(false);
-        }, 1500);
+        // setTimeout(() => {
+        
+        // }, 1500);
+        setSplineLoading(false);
       })
 
       .catch((error) => {
@@ -229,16 +230,18 @@ const Page = () => {
         <div className="one w-full h-screen ">
           <div className="absolute z-[100000]">
             <div className="  z-[-1]">
-              <canvas ref={canvasRef} id="canvas3d"></canvas>
+            
+              <img src="./heading.png" alt="" />
             </div>
           </div>
 
           <div id="fanta" className=" w-[100vw] h-[100vh] absolute   z-[50] ">
-            <Spline
+            {/* <Spline
               className="w-full h-full  "
               id="box"
               scene="https://prod.spline.design/LitUGRCkhTxntE3X/scene.splinecode"
-            />
+            /> */}
+              <canvas ref={canvasRef} id="canvas3d"></canvas>
           </div>
 
           <div className="w-full h-screen relative z-[1000000]">
