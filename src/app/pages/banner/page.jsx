@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Lenis from "@studio-freight/lenis";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Spline from "@splinetool/react-spline";
 import Loading from "@/app/pages/loading/page";
@@ -22,15 +22,6 @@ const Page = () => {
   const textRefTwo = useRef(null);
 
   const arrowRef = useRef(null);
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time + 100);
-      requestAnimationFrame(raf);
-    }
-    window.scrollTo(0, 0);
-    requestAnimationFrame(raf);
-  }, []);
 
   // ========================
   const canvasRef = useRef(null);
