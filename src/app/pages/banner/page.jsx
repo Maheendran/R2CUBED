@@ -232,7 +232,7 @@ const Page = () => {
         <div className="one w-full h-screen ">
           <div className="absolute z-[100000]">
             <div className="  z-[-1]">
-        <p className="text-[17rem] font-bold">
+        <p className="text-[15rem] font-bold">
           R2CUBED
         </p>
           
@@ -249,7 +249,7 @@ const Page = () => {
               <canvas ref={canvasRef} id="canvas3d"></canvas>
           </div>
 
-          <div className="w-full h-screen relative z-[1000000]">
+          <div className="w-full h-screen border relative z-[1000000]">
             <Link href="/video">
               <div
                 ref={parentRef}
