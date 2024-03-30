@@ -350,9 +350,12 @@ const Page = () => {
 
     <div className="w-full h-[80vh] flex  justify-center  mt-5">
     <Card/>
- 
+
     </div>
     <Footer/>
+    <div className="w-full h-screen bg-red-300">
+    <p className="text-[10vw] text-white">hello</p>
+    </div>
       </div>
     </>
   );
