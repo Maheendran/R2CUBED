@@ -187,7 +187,7 @@ const Page = () => {
   const handleMouseEnter = (e) => {
     const cursor = cursorRef.current;
     gsap.to(".parentBox", {
-      scale: 1.3,
+      scale: 1.2,
 
       duration: 1, // Adjust the duration of the animation
       ease: "elastic.out", // Adjust the ease function for the bouncing effect
@@ -196,7 +196,7 @@ const Page = () => {
       left: "10rem",
       top: "10rem",
       duration: 1.5,
-      scale: 4,
+      scale: 4.5,
       ease: "power4.out",
       zIndex: 1,
     });
@@ -211,7 +211,7 @@ const Page = () => {
   const handleMouseLeave = (e) => {
     const cursor = cursorRef.current;
     gsap.to(".parentBox", {
-      scale: 1,
+      scale: 0.9,
     });
     gsap.to(".cursor", {
       left: "-10rem",
