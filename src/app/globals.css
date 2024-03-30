@@ -62,7 +62,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
+
+}
+.arrowparent p{
+  font-family:cursive;
 }
 html , body{
     height: 100%;
@@ -209,14 +212,14 @@ background-color: #fff;
   .arrow{
     transition: 0.5s ease-in-out;
   }
-  .arrowparent:hover .arrow{
+  .parentBox:hover .arrow{
     transform: rotate(45deg);
   }
   .menubtn{
     transition: 0.5s ease-in-out;
   }
 .menuOne{
-  right: -28rem;
+  right: -30rem;
   transition: 0.5s ease-in-out;
 }
   .menubtn:hover .menuOne {

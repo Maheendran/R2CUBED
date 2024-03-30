@@ -232,8 +232,11 @@ const Page = () => {
         <div className="one w-full h-screen ">
           <div className="absolute z-[100000]">
             <div className="  z-[-1]">
-            
-              <img src="./heading.png" alt="" />
+        <p className="text-[17rem] font-bold">
+          R2CUBED
+        </p>
+          
+              {/* <img src="./heading.png" alt="" /> */}
             </div>
           </div>
 
@@ -250,13 +253,13 @@ const Page = () => {
             <Link href="/video">
               <div
                 ref={parentRef}
-                className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
+                className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[7rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <div
                   ref={textRef}
-                  className="w-fit arrowparent h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+                  className="w-fit  text-center arrowparent h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
                 >
                   <GoArrowUpRight
                     className="mx-auto arrow"
