@@ -12,12 +12,12 @@ const Page = () => {
           <input
             type="text"
             placeholder="First Name"
-            className="p-4 mb-3 w-[45%] text-[3.5rem] bg-black text-white border-0 border-b-2"
+            className="p-4 mb-3 w-[45%] text-[3rem] bg-black text-white border-0 border-b-2"
           />
           <input
             type="text"
             placeholder="Last Name"
-            className="p-4 mb-3 w-[45%] text-[3.5rem] bg-black text-white border-0 border-b-2"
+            className="p-4 mb-3 w-[45%] text-[3rem] bg-black text-white border-0 border-b-2"
           />
         </div>
 
@@ -25,12 +25,12 @@ const Page = () => {
           <input
             type="text"
             placeholder="Email"
-            className="p-4 mb-3 w-[45%] text-[3.5rem] bg-black text-white border-0 border-b-2"
+            className="p-4 mb-3 w-[45%] text-[3rem] bg-black text-white border-0 border-b-2"
           />
           <input
             type="text"
             placeholder="Phone"
-            className="p-4 mb-3 w-[45%] text-[3.5rem] bg-black text-white border-0 border-b-2"
+            className="p-4 mb-3 w-[45%] text-[3rem] bg-black text-white border-0 border-b-2"
           />
         </div>
 
@@ -38,7 +38,7 @@ const Page = () => {
           <input
             type="text"
             placeholder="Country"
-            className="p-4 mb-3 w-full text-[3.5rem] bg-black text-white border-0 border-b-2"
+            className="p-4 mb-3 w-full text-[3rem] bg-black text-white border-0 border-b-2"
           />
         </div>
       </div>

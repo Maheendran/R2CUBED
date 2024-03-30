@@ -314,7 +314,7 @@ const Page = () => {
        
 
             <h1 className="text-[5rem]">Heading</h1>
-            <div className="w-[90%] bgblur h-fit p-4 ">
+            <div className="w-[90%] bgblur h-fit p-4 text-[1rem] ">
                <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam,
               excepturi sed, itaque placeat id natus soluta veniam obcaecati qui
