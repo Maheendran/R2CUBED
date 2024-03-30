@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { FaPlay } from "react-icons/fa";
+import NewNav from "../components/newNavb/NewNav";
 
 const Page = () => {
   const [state, setState] = useState(true);
@@ -47,12 +48,13 @@ const Page = () => {
   return (
     
    
-   
-        <div className="w-fit mainbg h-screen relative overflow-hidden">
-         <div className="w-[100vw]"></div>
+   <>
+   <NewNav/>
+    <div className="w-100  mainbg h-[91.5vh] relative overflow-hidden">
+
             <div
-              className="m-auto  mt-[2rem]  border  z-20 w-[88%] sm:w-[85%] h-[300px]
-          overflow-hidden   rounded-[20px] md:h-[91vh] 
+              className="m-auto  mt-[2rem]    z-20 w-[88%] sm:w-[85%] h-[300px]
+          overflow-hidden   rounded-[20px] md:h-[84vh] 
           absolute right-0 top-0 bottom-0 left-0"
             >
               <div className="  h-full w-full  ">
@@ -445,6 +447,8 @@ const Page = () => {
               </span>
             </div>
           </div>
+   </>
+       
      
   );
 };

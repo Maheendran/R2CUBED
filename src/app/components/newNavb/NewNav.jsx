@@ -10,7 +10,7 @@ const NewNav = () => {
       
        navbg"
     >
-      <div className="   w-[3.3rem] h-[8vh]    px-2">
+      <div className="   w-[3.5rem] h-[8vh]    px-2">
         <Link href="/">
         <img
           id="logo"
