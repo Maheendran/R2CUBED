@@ -80,7 +80,7 @@ const Page = () => {
     });
     tl.to("#fanta", {
       y: "145%",
-      x: "-48.5vw",
+      x: "-48vw",
       scale: 0.15,
       rotateZ: "0deg",
       ease: "power1.out",
@@ -289,7 +289,7 @@ const Page = () => {
             <div
               ref={parentRef}
               className="parentBox absolute cursor-pointer  justify-center 
-               overflow-hidden z-[1000] right-0  bottom-[1rem]  m-auto flex parent
+               overflow-hidden z-[1000] right-[1rem]  bottom-[1rem]  m-auto flex parent
                 w-[10rem] h-[10rem] border border-gray-400 rounded-full  "
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
