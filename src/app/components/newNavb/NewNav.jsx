@@ -64,7 +64,7 @@ const NewNav = () => {
             </svg>
           </div>
 
-           <div id="" className=" menuOne flex gap-3 absolute    top-0 bottom-0 my-auto w-[25vw] z-[-100]">
+           <div id="" className=" menuOne flex gap-3 absolute    top-0 bottom-0 my-auto w-[30vw] z-[-100]">
           <p className="my-auto menuNav text-[0.9rem]">Service</p>
           <p className="my-auto menuNav text-[0.9rem]">About</p>
           <p className="my-auto menuNav text-[0.9rem]">projects</p>
