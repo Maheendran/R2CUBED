@@ -249,7 +249,7 @@ const Page = () => {
               <canvas ref={canvasRef} id="canvas3d"></canvas>
           </div>
 
-          <div className="w-full h-screen border relative z-[1000000]">
+          <div className="w-full h-screen  relative z-[1000000]">
             <Link href="/video">
               <div
                 ref={parentRef}
