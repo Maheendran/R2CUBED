@@ -10,6 +10,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { Application } from "@splinetool/runtime";
 import Link from "next/link";
 import Navbar from "@/app/components/navbar/Navbar";
+import Video from "@/app/components/video/Video";
 const Page = () => {
   const [loading, setLoading] = useState(true);
   const [splineloading, setSplineLoading] = useState(true);
@@ -79,7 +80,7 @@ const Page = () => {
     });
     tl.to("#fanta", {
       y: "145%",
-      x: "-51.5vw",
+      x: "-48.5vw",
       scale: 0.15,
       rotateZ: "0deg",
       ease: "power1.out",
@@ -231,8 +232,9 @@ const Page = () => {
   return (
     <>
       {splineloading && <Loading />}
-      <div id="main" className="relative text-white mainbg max-w-[100vw] ">
-        <div className="one w-full h-screen">
+      <div id="main" className="relative text-white mainbg max-w-[100vw] h-fit  ">
+       
+        <div className="one w-full h-screen ">
           <div className="absolute z-[100000]">
             <div className="  z-[-1]">
               <canvas ref={canvasRef} id="canvas3d"></canvas>
@@ -248,7 +250,7 @@ const Page = () => {
           </div>
 
           <div className="w-full h-screen relative z-[1000000]">
-            <Link href="/form">
+            <Link href="/video">
               <div
                 ref={parentRef}
                 className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
@@ -264,7 +266,7 @@ const Page = () => {
                     ref={arrowRef}
                     size={"3.9rem"}
                   />
-                  <p className=" m-auto text-[1.3rem]">Start Project</p>
+                  <p className=" m-auto text-[1.3rem]">Play </p>
                 </div>
 
                 <div className=" cursor bg-red-300" ref={cursorRef}></div>
@@ -272,9 +274,9 @@ const Page = () => {
             </Link>
           </div>
         </div>
-
-        <div className="two w-full h-fit flex flex-col sm:flex-row overflow-hidden">
-          <div className="w-full sm:w-1/2 h-[50vh] sm:h-screen">
+{/* ====================================== */}
+        <div className="two w-full h-fit flex flex-col sm:flex-row  ">
+          <div className="w-full sm:w-1/2 h-[50vh] sm:h-screen  relative">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <path
                 fill="#e04428"
@@ -282,8 +284,34 @@ const Page = () => {
                 transform="translate(100 100)"
               />
             </svg>
+            
+            <Link href="/form">
+            <div
+              ref={parentRef}
+              className="parentBox absolute cursor-pointer  justify-center 
+               overflow-hidden z-[1000] right-0  bottom-[1rem]  m-auto flex parent
+                w-[10rem] h-[10rem] border border-gray-400 rounded-full  "
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div
+                ref={textRefTwo}
+                className="arrowparent w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+              >
+                <GoArrowUpRight ref={arrowRef}   className="mx-auto arrow" size={"3.9rem"} />
+                <p className=" m-auto text-[1.3rem]">Start Project</p>
+              </div>
+
+              <div className=" cursor bg-red-300" ref={cursorRef}></div>
+            </div>
+          </Link>
           </div>
-          <div className="w-full sm:w-1/2 h-fit my-auto">
+
+     
+          <div className="w-full sm:w-1/2 h-fit my-auto relative ">
+          
+       
+
             <h1 className="text-[5rem]">Heading</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam,
@@ -303,33 +331,18 @@ const Page = () => {
 
           <div
             id="navbar"
-            className=" flex justify-between w-full  navbg "
+            className=" flex justify-between w-full navbg "
           >
            <Navbar/>
           </div>
+
         </div>
         {/* ===============   third page  =========================================================== */}
-        <div className="third w-full h-screen mainbg relative ">
-          <Link href="/video">
-            <div
-              ref={parentRef}
-              className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[15rem]  top-[10rem]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-400 rounded-full  "
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div
-                ref={textRefTwo}
-                className="arrowparent w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
-              >
-                <GoArrowUpRight ref={arrowRef}   className="mx-auto arrow" size={"3.9rem"} />
-                <p className=" m-auto text-[1.3rem]">Play</p>
-              </div>
-
-              <div className=" cursor bg-red-300" ref={cursorRef}></div>
-            </div>
-          </Link>
+        <div className="third w-full h-fit mainbg relative overflow-hidden ">
+         
+         <Video/>
         </div>
-        <div className="third w-full border h-screen mainbg "></div>
+    
       </div>
     </>
   );

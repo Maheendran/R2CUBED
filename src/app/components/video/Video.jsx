@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { FaPlay } from "react-icons/fa";
 
-const Page = () => {
+const Video = () => {
   const [state, setState] = useState(true);
 
   //   setState(true);
@@ -48,8 +48,11 @@ const Page = () => {
     
    
    
-        <div className="w-fit mainbg h-screen relative overflow-hidden">
-         <div className="w-[100vw]"></div>
+        <div className="w-full mainbg  relative">
+         <div className="w-full h-[13.5vh] "></div>
+         <div className="w-full  h-[95.5vh]  relative">
+
+  
             <div
               className="m-auto  mt-[2rem]  border  z-20 w-[88%] sm:w-[85%] h-[300px]
           overflow-hidden   rounded-[20px] md:h-[91vh] 
@@ -86,7 +89,7 @@ const Page = () => {
             </div>
 
        
-            <div className="w-fit h-fit ">
+            <div>
               <span className="  absolute left-0 sm:left-[-3.5rem] top-0">
                 <svg
                   className="w-[10rem] h-[10rem] sm:w-[30rem] sm:h-[20rem]"
@@ -444,9 +447,11 @@ const Page = () => {
                 </svg>
               </span>
             </div>
+            </div>
+
           </div>
      
   );
 };
 
-export default Page;
+export default Video;
