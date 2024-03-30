@@ -12,6 +12,8 @@ import Link from "next/link";
 import Navbar from "@/app/components/navbar/Navbar";
 import Video from "@/app/components/video/Video";
 import NewNav from "@/app/components/newNavb/NewNav";
+import Card from '@/app/pages/cards/page'
+import Footer from "@/app/components/footer/Footer";
 const Page = () => {
   const [loading, setLoading] = useState(true);
   const [splineloading, setSplineLoading] = useState(true);
@@ -342,6 +344,12 @@ const Page = () => {
          <Video/>
         </div>
     
+
+    <div className="w-full h-[80vh] flex  justify-center  mt-5">
+    <Card/>
+ 
+    </div>
+    <Footer/>
       </div>
     </>
   );
