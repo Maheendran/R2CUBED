@@ -246,7 +246,7 @@ const Page = () => {
             <Spline
               className="w-full h-full  "
               id="box"
-              scene="https://prod.spline.design/ThZV623jazw2LSZ1/scene.splinecode"
+              scene="https://prod.spline.design/LitUGRCkhTxntE3X/scene.splinecode"
             />
           </div>
 
