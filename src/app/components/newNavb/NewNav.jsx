@@ -1,46 +1,25 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Application } from "@splinetool/runtime";
-
+import React from "react";
+import Link from 'next/link'
 const NewNav = () => {
-  const [enlarge, setEnlarge] = useState(true);
-  const navbarRef = useRef(null);
-  const NavCanvasRef = useRef(null);
 
-  //   const handlemouseEnter = () => {
-  //     gsap.registerPlugin(ScrollTrigger);
-  //     gsap.to("#menuOne", {
-  //       x: -220,
-  //       duration: 1.4,
-  //       ease: "power1.out",
-  //     });
-  //   };
-
-  //   const handlemouseLeave = () => {
-  //     gsap.registerPlugin(ScrollTrigger);
-  //     gsap.to("#menuOne", {
-  //       x: 200,
-  //       duration: 1,
-  //       ease: "power1.out",
-  //     });
-  //   };
   return (
     <div
-      id="navbar"
-      ref={navbarRef}
+   
       className=" flex justify-between w-full h-[8.5vh] 
       
        navbg"
     >
       <div className="   w-[3.3rem] h-[8vh]    px-2">
+        <Link href="/">
         <img
           id="logo"
           className=" w-full h-full  py-[2px]"
           src="./logo.png"
           alt=""
         />
+        </Link>
+      
       </div>
 
       {/* ================ */}
@@ -51,8 +30,8 @@ const NewNav = () => {
       >
 
 
-        <div className=" menubtn  my-auto overflow-hidden  flex justify-center   h-full  z-[1000]">
-          <p className="my-auto bg-black">Menu</p>
+        <div className=" menubtn text-white  my-auto overflow-hidden  flex justify-center   h-full  z-[1000]">
+          <p className="my-auto bg-black ">Menu</p>
           <div className="my-auto bg-black">
             <svg
               className="subesvg"

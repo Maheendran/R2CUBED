@@ -309,12 +309,13 @@ const Page = () => {
           </div>
 
      
-          <div className="w-full sm:w-1/2 h-fit my-auto relative ">
+          <div className="w-full sm:w-1/2  h-fit my-auto relative ">
           
        
 
             <h1 className="text-[5rem]">Heading</h1>
-            <p>
+            <div className="w-[90%] bgblur h-fit p-4 ">
+               <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam,
               excepturi sed, itaque placeat id natus soluta veniam obcaecati qui
               a laborum laboriosam dolorem illum labore sit, voluptates commodi
@@ -328,6 +329,8 @@ const Page = () => {
               eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni
               aspernatur quod distinctio.
             </p>
+            </div>
+           
           </div>
 
           <div

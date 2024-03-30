@@ -1,9 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import NewNav from "@/app/components/newNavb/NewNav"
 const Page = () => {
   return (
-    <div className='w-full h-screen mainbg relative'>
-<div className='w-fit h-fit my-auto  absolute top-0 bottom-0 left-[2rem]'>
+    <>
+  <NewNav/>  
+    <div className='w-full  h-screen mainbg relative p-[10rem]'>
+    
+ 
+<div className='w-[70%]   h-fit absolute top-0 bottom-0 m-auto   '>
 <p className='text-[3.5rem] text-white'>What are you searching for ?</p>
         <div className='w-fit h-fit  relative textbganimate'>
         <Link href="./contact-us">
@@ -29,6 +34,7 @@ const Page = () => {
        
       
     </div>
+    </>
   )
 }
 
