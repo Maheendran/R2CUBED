@@ -253,7 +253,7 @@ const Page = () => {
             <Link href="/video">
               <div
                 ref={parentRef}
-                className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[7rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
+                className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[3rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -296,10 +296,10 @@ const Page = () => {
             >
               <div
                 ref={textRefTwo}
-                className="arrowparent w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+                className=" arrowparent w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
               >
                 <GoArrowUpRight ref={arrowRef}   className="mx-auto arrow" size={"3.9rem"} />
-                <p className=" m-auto text-[1.3rem]">Start Project</p>
+                <p className=" m-auto text-[1.1rem]">Start Project</p>
               </div>
 
               <div className=" cursor bg-red-300" ref={cursorRef}></div>
