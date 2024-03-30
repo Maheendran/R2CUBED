@@ -36,7 +36,8 @@ const Video = () => {
     const video = videoRef.current;
     if (video.paused) {
       video.play();
-      setVideoPlaying(true);
+      setVideoPlaying(true);y
+      
     } else {
       video.pause();
       setVideoPlaying(false);

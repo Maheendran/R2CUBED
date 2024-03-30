@@ -253,7 +253,7 @@ const Page = () => {
             <Link href="/video">
               <div
                 ref={parentRef}
-                className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[3rem]  top-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
+                className="parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[3rem]  bottom-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
