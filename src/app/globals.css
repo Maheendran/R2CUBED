@@ -191,7 +191,7 @@ background-color: #fff;
     stroke-dasharray: 100; /* Initial dash array length */
     stroke-dashoffset: 0; /* Initial dash offset */
     transition: stroke-dasharray 0.3s ease; /* Define the transition effect */
-    animation: dash 8s linear infinite;
+    /* animation: dash 8s linear infinite; */
     stroke:rgb(255, 255, 255);
 
     margin: auto;
@@ -199,13 +199,33 @@ background-color: #fff;
 
   @keyframes dash {
     to {
-      /* stroke-dasharray: 100; Final dash array length */
+   
       stroke-dashoffset: -150; 
     }
+  }
+  .menubtn:hover .subesvg {
+    animation: dash 8s linear infinite;
   }
   .arrow{
     transition: 0.5s ease-in-out;
   }
   .arrowparent:hover .arrow{
     transform: rotate(45deg);
+  }
+  .menubtn{
+    transition: 0.5s ease-in-out;
+  }
+.menuOne{
+  right: -28rem;
+  transition: 0.5s ease-in-out;
+}
+  .menubtn:hover .menuOne {
+ 
+     right: 0rem;
+
+  }
+
+  .menuNav:hover{
+    transition: 0.5s ease-in-out;
+color:  rgb(172, 223, 234);
   }

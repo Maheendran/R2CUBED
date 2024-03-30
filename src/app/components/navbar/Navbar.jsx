@@ -11,7 +11,7 @@ const Navbar = () => {
 
 
   useEffect(() => {
-    // Ensure NavCanvasRef is not null before accessing its current property
+
     const newCanvas = NavCanvasRef.current;
     if (!newCanvas) return;
 
@@ -30,7 +30,7 @@ const Navbar = () => {
       // Clean up resources if needed
     };
   }, [NavCanvasRef]); 
-//   ======================
+
   const handleEnlarge = () => {
     setEnlarge(!enlarge);
 

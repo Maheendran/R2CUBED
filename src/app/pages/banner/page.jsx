@@ -11,6 +11,7 @@ import { Application } from "@splinetool/runtime";
 import Link from "next/link";
 import Navbar from "@/app/components/navbar/Navbar";
 import Video from "@/app/components/video/Video";
+import NewNav from "@/app/components/newNavb/NewNav";
 const Page = () => {
   const [loading, setLoading] = useState(true);
   const [splineloading, setSplineLoading] = useState(true);
@@ -333,7 +334,8 @@ const Page = () => {
             id="navbar"
             className=" flex justify-between w-full navbg "
           >
-           <Navbar/>
+           {/* <Navbar/> */}
+           <NewNav/>
           </div>
 
         </div>
