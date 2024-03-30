@@ -196,7 +196,7 @@ const Page = () => {
       left: "10rem",
       top: "10rem",
       duration: 1.5,
-      scale: 4.5,
+      scale: 4,
       ease: "power4.out",
       zIndex: 1,
     });
