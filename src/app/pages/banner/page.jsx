@@ -15,8 +15,10 @@ import NewNav from "@/app/components/newNavb/NewNav";
 import Card from '@/app/pages/cards/page'
 import Footer from "@/app/components/footer/Footer";
 const Page = () => {
-  const [loading, setLoading] = useState(true);
+
   const [splineloading, setSplineLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [finalloading, setFinalLoading] = useState(true);
   const splineRef = useRef(null);
   const cursorRef = useRef(null);
   const parentRef = useRef(null);
@@ -35,9 +37,9 @@ const Page = () => {
     spline
       .load("https://prod.spline.design/LitUGRCkhTxntE3X/scene.splinecode")
       .then(() => {
-        // setTimeout(() => {
-        
-        // }, 1500);
+        setTimeout(() => {
+          setLoading(false)
+        },1500);
         setSplineLoading(false);
       })
 
@@ -226,7 +228,8 @@ const Page = () => {
 
   return (
     <>
-      {splineloading && <Loading />}
+    {/* splineloading &&  && loading */}
+      {finalloading && <Loading setFinalLoading={setFinalLoading} splineloading={splineloading} loading={loading} />}
       <div id="main" className="relative text-white mainbg max-w-[100vw] h-fit  ">
        
         <div className="one w-full h-screen ">
