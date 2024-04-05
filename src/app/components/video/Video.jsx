@@ -6,28 +6,6 @@ import { FaPlay } from "react-icons/fa";
 const Video = () => {
   const [state, setState] = useState(true);
 
-  //   setState(true);
-
-  //   // dotSvg
-  //   if (inView) {
-
-  //     videoHead.start({
-  //       transform: "translateX(0rem)",
-  //       transition: {
-  //         duration: 1.5,
-  //       },
-  //     });
-  //   }
-  //   if (!inView) {
-  //     videoHead.start({
-  //       transform: "translateX(10rem)",
-  //       scale: "0rem",
-  //       transition: {
-  //         duration: 1.3,
-  //       },
-  //     });
-  //   }
-  // }, [inView]);
 
   const [videoOpen, setvideoOpen] = useState(false);
   const videoRef = useRef();
@@ -36,7 +14,7 @@ const Video = () => {
     const video = videoRef.current;
     if (video.paused) {
       video.play();
-      setVideoPlaying(true);y
+      setVideoPlaying(true);
       
     } else {
       video.pause();
@@ -55,7 +33,7 @@ const Video = () => {
 
   
             <div
-              className="m-auto  mt-[2rem]  border  z-20 w-[88%] sm:w-[85%] h-[300px]
+              className="m-auto  mt-[2rem]    z-20 w-[88%] sm:w-[85%] h-[300px]
           overflow-hidden   rounded-[20px] md:h-[91vh] 
           absolute right-0 top-0 bottom-0 left-0"
             >
@@ -63,15 +41,15 @@ const Video = () => {
                 <video
                   ref={videoRef}
                   initial={{ opacity: 0 }}
-                  src="/video1.mp4"
+                  src="/R2C.mp4"
                   loop
-                  muted
+                  // muted
                   className="w-full mx-auto h-full video-banner  object-cover object-center"
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    scale: 1.3,
+                    // scale: 1.3,
                   }}
                 ></video>
               </div>
