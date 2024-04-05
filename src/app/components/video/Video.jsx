@@ -24,28 +24,33 @@ const Video = () => {
 
   const [videoPlaying, setVideoPlaying] = useState(false);
 
-  const videoControls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.1,
   });
   useEffect(() => {
-    setState(true);
+
     if (inView) {
-      setVideoPlaying(true);
+      // setVideoPlaying(true);
       videoRef.current.play();
+      if(!videoPlaying){
+        setVideoPlaying(true);
+      }
     }
     if (!inView) {
-      setVideoPlaying(false);
+      // setVideoPlaying(false);
       videoRef.current.pause();
+      if(videoPlaying){
+        setVideoPlaying(true);
+      }
     }
   }, [inView]);
 
   return (
     <div className="w-full mainbg  relative">
       <div className="w-full h-[13.5vh] "></div>
-      <div className="w-full  h-[95.5vh]  relative" ref={ref}>
+      <div className="w-full  h-[95.5vh]  relative" >
         <div
-          animate={videoControls}
+        ref={ref}
           className="m-auto  mt-[2rem]    z-20 w-[88%] sm:w-[85%] h-[300px]
           overflow-hidden   rounded-[20px] md:h-[91vh] 
           absolute right-0 top-0 bottom-0 left-0"
@@ -57,7 +62,7 @@ const Video = () => {
               src="/R2C1.mp4"
               loop
               // muted
-              className="w-full mx-auto h-full video-banner  object-cover object-center"
+              className=" w-full mx-auto h-full video-banner  object-cover object-center"
               style={{
                 objectFit: "cover",
                 width: "100%",
@@ -66,9 +71,9 @@ const Video = () => {
             ></video>
           </div>
 
-          <div
+          <div 
             onClick={handleVideoToggle}
-            className={`absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
+            className={`cursor-pointer absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
           >
             {!videoPlaying && (
               <div className="absolute z-20 flex p-4  items-center justify-center rounded-full text-white  play_btn h-[6rem] w-[6rem]">
