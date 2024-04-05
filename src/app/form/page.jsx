@@ -21,7 +21,7 @@ const Page = () => {
       
 
         <div className='w-fit h-fit  relative textbganimate'>
-          <Link href="./contact-us">
+          <Link href="./contact">
           <p className='text-[3rem] text-white '>Apply</p>
 
           </Link>

@@ -3,9 +3,10 @@ import NewNav from '../components/newNavb/NewNav'
 
 const Page = () => {
   return (
-    <div className='w-full h-screen '>
-        <NewNav/>
-      contact us</div>
+    <div>
+           <NewNav/>
+           <h1>Projects</h1>
+    </div>
   )
 }
 
