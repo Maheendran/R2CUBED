@@ -225,7 +225,7 @@ const Page = () => {
 
   return (
     <>
-      {/* splineloading &&  && loading */}
+      {/* splineloading &&  && loading  */}
       {finalloading && (
         <Loading
           setFinalLoading={setFinalLoading}
@@ -240,7 +240,8 @@ const Page = () => {
         <div className="one w-full h-screen ">
           <div className="absolute z-[100000]">
             <div className="  z-[-1]">
-              <p className="text-[15rem] font-bold">R2CUBED</p>
+              <p className="text-[15rem] font-bold">R2
+              <span className="text-[#a80a09]">CUBE</span>D</p>
 
               {/* <img src="./heading.png" alt="" /> */}
             </div>

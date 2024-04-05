@@ -31,8 +31,12 @@ const Video = () => {
 
     if (inView) {
       // setVideoPlaying(true);
-      videoRef.current.play();
-      if(!videoPlaying){
+      if(videoRef.current){
+        videoRef.current.play();
+      }
+    
+
+      if(videoPlaying){
         setVideoPlaying(true);
       }
     }
@@ -40,7 +44,7 @@ const Video = () => {
       // setVideoPlaying(false);
       videoRef.current.pause();
       if(videoPlaying){
-        setVideoPlaying(true);
+        setVideoPlaying(false);
       }
     }
   }, [inView]);
@@ -52,7 +56,7 @@ const Video = () => {
         <div
         ref={ref}
           className="m-auto  mt-[2rem]    z-20 w-[88%] sm:w-[85%] h-[300px]
-          overflow-hidden   rounded-[20px] md:h-[91vh] 
+          overflow-hidden   rounded-[20px] md:h-[85vh] 
           absolute right-0 top-0 bottom-0 left-0"
         >
           <div className="  h-full w-full  ">
@@ -61,7 +65,7 @@ const Video = () => {
               initial={{ opacity: 0 }}
               src="/R2C1.mp4"
               loop
-              // muted
+              muted
               className=" w-full mx-auto h-full video-banner  object-cover object-center"
               style={{
                 objectFit: "cover",
@@ -75,12 +79,12 @@ const Video = () => {
             onClick={handleVideoToggle}
             className={`cursor-pointer absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
           >
-            {!videoPlaying && (
+            {/* {!videoPlaying && (
               <div className="absolute z-20 flex p-4  items-center justify-center rounded-full text-white  play_btn h-[6rem] w-[6rem]">
                 <span className="absolute flex  right-0 top-0 z-[-1] h-full w-full animate-ping rounded-full bg-green-300 bg-opacity-20 delay-300 duration-1000"></span>
                 <FaPlay size={"3rem"} className="m-auto" />
               </div>
-            )}
+            )} */}
           </div>
         </div>
 
