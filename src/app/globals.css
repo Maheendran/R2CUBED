@@ -189,25 +189,50 @@ background-color: #fff;
     outline: none;
   } 
   .subesvg {
-    width: 2rem; /* Adjust size as needed */
-    height: 2rem; /* Adjust size as needed */
+    width: 3rem; /* Adjust size as needed */
+    height: 3rem; /* Adjust size as needed */
     stroke-dasharray: 100; /* Initial dash array length */
     stroke-dashoffset: 0; /* Initial dash offset */
-    transition: stroke-dasharray 0.3s ease; /* Define the transition effect */
-    /* animation: dash 8s linear infinite; */
+    /* transition: stroke-dasharray 0.3s ease;  */
     stroke:rgb(255, 255, 255);
-
+color: white;
     margin: auto;
+    /* transition: 0.5s ease-in-out; */
   }
 
   @keyframes dash {
     to {
    
-      stroke-dashoffset: -150; 
+      transform: rotate(90deg);
+      stroke-dashoffset: -110; 
     }
   }
-  .menubtn:hover .subesvg {
-    animation: dash 8s linear infinite;
+  /* .menubtn:hover .subesvg {
+    transition: 0.5s ease-in-out;
+    animation: dash 0.5s linear forwards 1;
+  } */
+
+  .menubtn:hover .dotone{
+    animation: dotone 1s linear infinite;
+  }
+  .menubtn:hover .dottwo{
+    animation: dotone 1s linear infinite;
+    animation-delay: 1.3s;
+  }
+
+  .menubtn:hover .dotthree{
+    animation: dotone 1s linear infinite;
+    animation-delay: 1.5s;
+  }
+  @keyframes dotone {
+    0% {
+   opacity: 0.1;
+  
+
+    }
+    100%{
+      opacity: 1;
+    }
   }
   .arrow{
     transition: 0.5s ease-in-out;
