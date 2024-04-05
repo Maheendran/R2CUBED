@@ -31,9 +31,11 @@ const Video = () => {
   useEffect(() => {
     setState(true);
     if (inView) {
+      setVideoPlaying(true);
       videoRef.current.play();
     }
     if (!inView) {
+      setVideoPlaying(false);
       videoRef.current.pause();
     }
   }, [inView]);
