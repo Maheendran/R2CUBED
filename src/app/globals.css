@@ -189,8 +189,8 @@ background-color: #fff;
     outline: none;
   } 
   .subesvg {
-    width: 3rem; /* Adjust size as needed */
-    height: 3rem; /* Adjust size as needed */
+    width: 2rem; /* Adjust size as needed */
+    height: 2rem; /* Adjust size as needed */
     stroke-dasharray: 100; /* Initial dash array length */
     stroke-dashoffset: 0; /* Initial dash offset */
     /* transition: stroke-dasharray 0.3s ease;  */
