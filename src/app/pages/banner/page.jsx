@@ -54,7 +54,6 @@ const Page = () => {
   // ============ first animation===============
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".two",
@@ -62,8 +61,25 @@ const Page = () => {
         end: "100% 0%",
         scrub: true,
       },
-    });
-
+    })
+    // .fromTo("#heading",{
+    //   letterSpacing:"3rem",
+    // },{
+    //   letterSpacing:"0rem",
+    // })
+    .to("#heading",{
+  letterSpacing:"3rem",
+  // x:800,
+  scale:2
+})
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".two",
+        start: "0% 100%",
+        end: "100% 0%",
+        scrub: true,
+      },
+    })
     tl.to("#fanta", {
       y: "100%",
       x: "-25vw",
@@ -240,7 +256,7 @@ const Page = () => {
         <div className="one w-full h-screen ">
           <div className="absolute z-[100000]">
             <div className="  z-[-1]">
-              <p className="text-[15rem] font-bold">R2
+              <p id="heading" className="text-[15rem] font-bold ">R2
               <span className="text-[#a80a09]">CUBE</span>D</p>
 
               {/* <img src="./heading.png" alt="" /> */}
@@ -281,7 +297,7 @@ const Page = () => {
           <div className="w-full sm:w-1/2 h-[50vh] sm:h-screen  relative">
             <svg viewBox="0 0 200 200" >
               <path
-                fill="#e04428"
+                fill="#A80A09"
                 d="M41.5,-59.5C49.8,-51.1,49.7,-33.6,50.7,-19.2C51.7,-4.7,53.8,6.7,52.4,18.9C51.1,31.1,46.3,44.1,36.9,52.9C27.6,61.8,13.8,66.5,-2.5,70C-18.8,73.4,-37.7,75.6,-52.5,68.5C-67.3,61.5,-78.2,45.2,-84.5,27.1C-90.9,9,-92.7,-10.8,-80.5,-19.3C-68.3,-27.8,-42.1,-24.8,-26.3,-30.8C-10.6,-36.8,-5.3,-51.7,5.7,-59.5C16.6,-67.3,33.2,-68,41.5,-59.5Z"
                 transform="translate(100 100)"
               />
