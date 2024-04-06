@@ -34,7 +34,7 @@ const Page = () => {
     const spline = new Application(canvas);
   
     spline
-      .load("https://prod.spline.design/hRXnj-Rva6kVnzNJ/scene.splinecode")
+      .load("https://prod.spline.design/gYbxI9nL-ky-wUlI/scene.splinecode")
       .then(() => {
         setTimeout(() => {
           setLoading(false);
@@ -92,7 +92,7 @@ const Page = () => {
     tl.to("#fanta", {
       y: "100%",
       x: "-25vw",
-      scale: 1.3,
+      scale: 1.2,
       rotateZ: "150deg",
 
       ease: "power1.out",
