@@ -75,7 +75,7 @@ gsap.timeline()
   scrub: true,
     y: 500
 }, {
-  delay: 1.9,
+  delay: 3,
     y: 0,
     ease: "power2.out"
 
@@ -263,13 +263,14 @@ gsap.timeline()
   return (
     <>
       {/* splineloading &&  && loading  */}
-      {finalloading && (
+      {finalloading &&
         <Loading
           setFinalLoading={setFinalLoading}
           splineloading={splineloading}
           loading={loading}
         />
-      )}
+}
+
       <div
         id="main"
         className="relative text-white mainbg max-w-[100vw] h-fit  "
