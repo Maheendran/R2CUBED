@@ -50,19 +50,25 @@ const NewNav = () => {
           </div>
 
            <div id="" className=" menuOne flex gap-3 absolute    top-0 bottom-0 my-auto w-[24vw] z-[-100]">
-           <Link href="/" className="my-auto">
-           <p className=" menuNav text-[0.9rem]">Home</p>
-
-           </Link>
+         
           <p className="my-auto menuNav text-[0.9rem]">About</p>
           <Link href="/projects" className="my-auto">
-          <p className="my-auto menuNav text-[0.9rem]">projects</p>
+          <p className="my-auto menuNav text-[0.9rem]">Manufacturing</p>
 
           </Link>
+          <Link href="/" className="my-auto">
+           <p className=" menuNav text-[0.9rem]">Retail</p>
+
+           </Link>
+           <Link href="/" className="my-auto">
+           <p className=" menuNav text-[0.9rem]">Project</p>
+
+           </Link>
           <Link href="/contact-us" className="my-auto">
           <p className="my-auto menuNav text-[0.9rem]">Contact us</p>
           </Link>
-         
+
+     
         </div>
         </div>
 

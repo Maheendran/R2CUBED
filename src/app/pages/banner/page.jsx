@@ -340,7 +340,7 @@ const Page = () => {
           </div>
 
           <div className="w-full sm:w-1/2  h-fit my-auto relative ">
-            <h1 className="text-[5rem]">Heading</h1>
+            <p className="text-[5rem]">Heading</p>
             <div className="w-[90%] bgblur h-fit p-4 text-[0.9rem] ">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
