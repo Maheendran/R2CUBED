@@ -75,7 +75,7 @@ gsap.timeline()
   scrub: true,
     y: 500
 }, {
-  delay: 1.5,
+  delay: 1.9,
     y: 0,
     ease: "power2.out"
 
