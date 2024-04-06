@@ -369,7 +369,7 @@ const Page = () => {
           <Video />
         </div>
 
-        <div className="w-full h-[80vh] flex  justify-center  mt-5">
+        <div className="w-full h-[120vh] flex  justify-center  mt-5">
           <Card />
         </div>
         <Footer />
