@@ -340,21 +340,10 @@ const Page = () => {
           </div>
 
           <div className="w-full sm:w-1/2  h-fit my-auto relative ">
-            <p className="text-[5rem]">Heading</p>
+            <p className="text-[4rem]">Discover Our Story</p>
             <div className="w-[90%] bgblur h-fit p-4 text-[0.9rem] ">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Numquam, excepturi sed, itaque placeat id natus soluta veniam
-                obcaecati qui a laborum laboriosam dolorem illum labore sit,
-                voluptates commodi neque dolores tempore temporibus deleniti?
-                Nobis, ratione hic error quis cum neque nulla laudantium nostrum
-                sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum
-                totam quia non! Labore, neque! Amet voluptatem illo similique
-                recusandae! Ex quaerat quibusdam asperiores, ducimus tempore
-                magni labore. Tenetur voluptas, quos ex repellendus provident
-                mollitia laboriosam adipisci alias a impedit, cum accusamus
-                rerum delectus eaque facilis veniam quia laborum incidunt ea
-                assumenda! Eos magni aspernatur quod distinctio.
+              R2C specializes in Deep Tech Solutions for Manufacturing, covering areas such as IIoT, Energy Management, AI, ML, Computer Vision-enabled analytics, and AR & VR Simulation Solutions. We ensure high Uptime and perform Predictive Analytics using Sensor Data tracking, correlation, trend analysis, anomaly detection, and causal inferencing to keep Downtime low while improving throughput and productivity. Our solutions are comprehensive, end-to-end, scalable, and deliver unparalleled ROI. Connect with us to share your business needs and discover how we can make a difference for you with our solutions.
               </p>
             </div>
           </div>
