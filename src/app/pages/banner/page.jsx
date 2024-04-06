@@ -30,56 +30,44 @@ const Page = () => {
   const canvasRef = useRef(null);
   useEffect(() => {
     const canvas = canvasRef.current;
-
+  
     const spline = new Application(canvas);
-
+  
     spline
       .load("https://prod.spline.design/hRXnj-Rva6kVnzNJ/scene.splinecode")
       .then(() => {
         setTimeout(() => {
           setLoading(false);
+      
+         
         }, 1500);
         setSplineLoading(false);
+      }).then(()=>{
+         gsap.timeline()
+            .fromTo("#heading", {
+              scrub: true,
+              y: 700
+            }, {
+              delay:2.5,
+              y: 0,
+              ease: "power2.out"
+            });
       })
-
       .catch((error) => {
         console.error("Error loading scene:", error);
       });
-
+  
     return () => {
       spline.dispose();
     };
   }, []);
+  
 
   // ============ first animation===============
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".one",
-    //     start: "10% 10%",
-    //     end: "50% 0%",
-    //     scrub: true,
-    //     markers:true
-    //   },
-    // })
-
-//     .fromTo("#heading",{
-//       scrub: true,
-// y:500
-// },{
-//   y:0
-// })
-gsap.timeline()
-.fromTo("#heading", {
-  scrub: true,
-    y: 500
-}, {
-  delay: 3,
-    y: 0,
-    ease: "power2.out"
-
-});
+  
+ 
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".two",
