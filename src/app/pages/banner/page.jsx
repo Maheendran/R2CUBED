@@ -54,6 +54,32 @@ const Page = () => {
   // ============ first animation===============
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    // gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".one",
+    //     start: "10% 10%",
+    //     end: "50% 0%",
+    //     scrub: true,
+    //     markers:true
+    //   },
+    // })
+
+//     .fromTo("#heading",{
+//       scrub: true,
+// y:500
+// },{
+//   y:0
+// })
+gsap.timeline()
+.fromTo("#heading", {
+  scrub: true,
+    y: 500
+}, {
+  delay: 1.5,
+    y: 0,
+    ease: "power2.out"
+
+});
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".two",
@@ -62,15 +88,10 @@ const Page = () => {
         scrub: true,
       },
     })
-    // .fromTo("#heading",{
-    //   letterSpacing:"3rem",
-    // },{
-    //   letterSpacing:"0rem",
-    // })
+
     .to("#heading",{
   letterSpacing:"3rem",
-  // x:800,
-  scale:2
+
 })
     var tl = gsap.timeline({
       scrollTrigger: {
@@ -253,13 +274,13 @@ const Page = () => {
         id="main"
         className="relative text-white mainbg max-w-[100vw] h-fit  "
       >
-        <div className="one w-full h-screen ">
-          <div className="absolute z-[100000]">
-            <div className="  z-[-1]">
-              <p id="heading" className="text-[15rem] font-bold ">R2
+        <div className="one w-full h-screen relative">
+          <div className="absolute z-[100] overflow-hidden  ">
+            <div className="">
+              <p id="heading" className=" text-[15rem] font-bold ">R2
               <span className="text-[#a80a09]">CUBE</span>D</p>
 
-              {/* <img src="./heading.png" alt="" /> */}
+             
             </div>
           </div>
 
