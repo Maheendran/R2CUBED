@@ -28,8 +28,24 @@ const Page = () => {
 
   // ========================
   const canvasRef = useRef(null);
+
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const hasSplineLoaded =  localStorage.getItem('splineLoaded');
+   
+     
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('splineLoaded');
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+  
+   gsap.to('#heading',{
+  scrub: true,
+  y: 700
+})
+    const loadSplineContent = () => {
+
+        const canvas = canvasRef.current;
   
     const spline = new Application(canvas);
   
@@ -39,31 +55,85 @@ const Page = () => {
         setTimeout(() => {
           setLoading(false);
       
-         
+          localStorage.setItem('splineLoaded', 'true');
         }, 1500);
         setSplineLoading(false);
       }).then(()=>{
-         gsap.timeline()
-            .fromTo("#heading", {
-              scrub: true,
-              y: 700
-            }, {
+        setTimeout(()=>{
+   gsap.timeline()
+            .to("#heading",  {
               delay:2.5,
               y: 0,
               ease: "power2.out"
             });
+        },1000)
+      
       })
       .catch((error) => {
         console.error("Error loading scene:", error);
       });
-  
+    }
+
+
+loadSplineContent();
+
+    if (hasSplineLoaded ==="true") {
+    return  setFinalLoading(false)
+    }
+
+
+
     return () => {
-      spline.dispose();
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
   
 
+
+  // =================
+  // useEffect(() => {
+  //   const loadSplineContent = () => {
+  //     const canvas = canvasRef.current;
+  //     const spline = new Application(canvas);
+  
+  //     spline
+  //       .load("https://prod.spline.design/GW6AzN9x5JiUUTXf/scene.splinecode")
+  //       .then(() => {
+  //         setTimeout(() => {
+  //           setLoading(false);
+  //         }, 1500);
+  //         setSplineLoading(false);
+  //       }).then(()=>{
+  //          gsap.timeline()
+  //             .fromTo("#heading", {
+  //               scrub: true,
+  //               y: 700
+  //             }, {
+  //               delay:2.5,
+  //               y: 0,
+  //               ease: "power2.out"
+  //             });
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error loading scene:", error);
+  //       });
+  //   };
+  
+  //   const hasSplineLoaded = localStorage.getItem('splineLoaded') || false;
+  
+  //   if (!hasSplineLoaded) {
+  //     alert('aaaaaaaa')
+  //     loadSplineContent();
+  //     localStorage.setItem('splineLoaded', 'true');
+  //   }
+  
+  //   return () => {
+  //     // Clean up any resources if needed
+  //   };
+  // }, []);
+  
   // ============ first animation===============
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
   
@@ -191,7 +261,6 @@ const Page = () => {
   // ====================
 
   useEffect(() => {
-    const cursor = cursorRef.current;
 
     gsap.to(".cursor", {
       left: "-10rem",
@@ -203,7 +272,6 @@ const Page = () => {
   }, []);
 
   const handleMouseEnter = (e) => {
-    const cursor = cursorRef.current;
     gsap.to(".parentBox", {
       scale: 1.2,
 
@@ -227,7 +295,7 @@ const Page = () => {
   };
 
   const handleMouseLeave = (e) => {
-    const cursor = cursorRef.current;
+  
     gsap.to(".parentBox", {
       scale: 0.9,
     });
@@ -265,6 +333,7 @@ const Page = () => {
         <div className="one w-full h-screen relative">
           <div className="absolute z-[100] overflow-hidden  ">
             <div className="">
+
               <p id="heading" className=" text-[13rem] font-bold ">R2
               <span className="text-[#b7141c]">CUBE</span>D</p>
 

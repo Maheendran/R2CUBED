@@ -60,7 +60,7 @@ const NewNav = () => {
            <p className=" menuNav text-[0.9rem]">Retail</p>
 
            </Link>
-           <Link href="/" className="my-auto">
+           <Link href="/projects" className="my-auto">
            <p className=" menuNav text-[0.9rem]">Project</p>
 
            </Link>
