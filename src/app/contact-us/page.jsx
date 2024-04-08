@@ -10,7 +10,7 @@ const Page = () => {
         */}
       {/* ============================ */}
 
-      <section className="text-gray-600 body-font  h-[91.5vh] w-full ">
+      {/* <section className="text-gray-600 body-font  h-[91.5vh] w-full ">
         <div
           className="container px-5  h-fit absolute p-4 top-0 bottom-0 left-0 right-0 m-auto 
      flex sm:flex-nowrap flex-wrap"
@@ -64,7 +64,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      {/* /================== */}
+ 
 
       <div className='w-full h-[91.5vh] relative'>
           <img className='h-full mx-auto' src="/contact.png" alt="" />
@@ -108,7 +108,7 @@ mx-auto">
 
 
           </div>
-          </div>
+          </div> */}
     </div>
   );
 };
