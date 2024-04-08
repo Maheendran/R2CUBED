@@ -56,11 +56,13 @@ const Video = () => {
               src="/R2C1.mp4"
               loop
               muted
+              
               className=" w-full mx-auto h-full video-banner  object-cover object-center"
               style={{
                 objectFit: "cover",
                 width: "100%",
                 height: "100%",
+                scale:1.1
               }}
             ></video>
   <div 
