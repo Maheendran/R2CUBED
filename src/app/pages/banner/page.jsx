@@ -266,7 +266,7 @@ const Page = () => {
           <div className="absolute z-[100] overflow-hidden  ">
             <div className="">
               <p id="heading" className=" text-[13rem] font-bold ">R2
-              <span className="text-[#a80a09]">CUBE</span>D</p>
+              <span className="text-[#b7141c]">CUBE</span>D</p>
 
              
             </div>
