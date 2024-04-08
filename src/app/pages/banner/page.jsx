@@ -332,7 +332,7 @@ loadSplineContent();
 
       <div
         id="main"
-        className="relative text-white mainbg max-w-[100vw] h-fit  "
+        className="relative text-white mainbg max-w-[100vw] h-fit overflow-hidden "
       >
         <div className="one w-full h-screen relative">
           <div className="absolute z-[100] overflow-hidden  ">
