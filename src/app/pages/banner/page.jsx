@@ -34,7 +34,7 @@ const Page = () => {
     const spline = new Application(canvas);
   
     spline
-      .load("https://prod.spline.design/gYbxI9nL-ky-wUlI/scene.splinecode")
+      .load("https://prod.spline.design/GW6AzN9x5JiUUTXf/scene.splinecode")
       .then(() => {
         setTimeout(() => {
           setLoading(false);

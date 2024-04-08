@@ -6,77 +6,127 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Video = () => {
-  const [state, setState] = useState(true);
+  // const [state, setState] = useState(true);
 
-  const [videoOpen, setvideoOpen] = useState(false);
-  const videoRef = useRef();
+  // const [videoOpen, setvideoOpen] = useState(false);
+  // const videoRef = useRef();
 
-  const handleVideoToggle = () => {
-    const video = videoRef.current;
-    if (video.paused) {
-      video.play();
-      setVideoPlaying(true);
-    } else {
-      video.pause();
-      setVideoPlaying(false);
-    }
-  };
+  // const [videoPlaying, setVideoPlaying] = useState(false);
 
-  const [videoPlaying, setVideoPlaying] = useState(false);
+  // const handleVideoToggle = () => {
+  //   const video = videoRef.current;
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
-  useEffect(() => {
+  //   if (video.paused) {
+  //     // video.play();
+  //     setVideoPlaying(true);
+  //   } else {
+  //     // video.pause();
+  //     setVideoPlaying(false);
+  //   }
+  // };
 
-    if (inView) {
-      // setVideoPlaying(true);
-      if(videoRef.current){
-        videoRef.current.play();
-      }
+  // const { ref, inView } = useInView({
+  //   threshold: 0.1,
+  // });
+  // useEffect(() => {
+
+  //   if (inView) {
+  //     // setVideoPlaying(true);
+  //     if(videoRef.current){
+  //       videoRef.current.play();
+  //     }
     
 
-      if(videoPlaying){
-        setVideoPlaying(true);
+  //     if(videoPlaying){
+  //       setVideoPlaying(true);
+  //     }
+  //   }
+  //   if (!inView) {
+  //     // setVideoPlaying(false);
+  //     videoRef.current.pause();
+  //     if(videoPlaying){
+  //       setVideoPlaying(false);
+  //     }
+  //   }
+  // }, [inView]);
+
+
+  // ========================
+  const [autoPlay, setAutoPlay] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const videoElement = videoRef.current;
+      const bounding = videoElement.getBoundingClientRect();
+      const isInViewport = (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+      if (isInViewport) {
+        setAutoPlay(true);
+      } else {
+        setAutoPlay(false);
       }
-    }
-    if (!inView) {
-      // setVideoPlaying(false);
-      videoRef.current.pause();
-      if(videoPlaying){
-        setVideoPlaying(false);
-      }
-    }
-  }, [inView]);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const toggleMute = () => {
+    setMuted(!muted);
+  };
+
+  const handleVideoClick = () => {
+    setMuted(false);
+  };
 
   return (
     <div className="w-full mainbg  relative">
       <div className="w-full h-[13.5vh] "></div>
       <div className="w-full  h-[95.5vh]  relative" >
         <div
-        ref={ref}
+        // ref={ref}
           className="m-auto  mt-[2rem]    z-20 w-[88%] sm:w-[85%] h-[300px]
           overflow-hidden   rounded-[20px] md:h-[85vh] 
           absolute right-0 top-0 bottom-0 left-0"
         >
           <div className="  h-full w-full  ">
-            <video
+            {/* <video
               ref={videoRef}
               initial={{ opacity: 0 }}
               src="/R2C1.mp4"
               loop
-              muted
+              muted={videoPlaying}
               className=" w-full mx-auto h-full video-banner  object-cover object-center"
               style={{
                 objectFit: "cover",
                 width: "100%",
                 height: "100%",
               }}
-            ></video>
+            ></video> */}
+            <video
+        ref={videoRef}
+        autoPlay={autoPlay}
+        muted={muted}
+        controls
+        style={{ width: '100%' }}
+        onClick={handleVideoClick}
+      >
+        <source src="/R2C1.mp4" type="video/mp4" />
+
+      </video>
+      <button onClick={toggleMute}>{muted ? 'Unmute' : 'Mute'}</button>
           </div>
 
           <div 
-            onClick={handleVideoToggle}
+            // onClick={handleVideoToggle}
             className={`cursor-pointer absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
           >
             {/* {!videoPlaying && (
