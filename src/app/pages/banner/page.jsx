@@ -265,7 +265,7 @@ const Page = () => {
         <div className="one w-full h-screen relative">
           <div className="absolute z-[100] overflow-hidden  ">
             <div className="">
-              <p id="heading" className=" text-[15rem] font-bold ">R2
+              <p id="heading" className=" text-[13rem] font-bold ">R2
               <span className="text-[#a80a09]">CUBE</span>D</p>
 
              
