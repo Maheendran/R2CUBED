@@ -40,7 +40,7 @@ const Page = () => {
     window.addEventListener('beforeunload', handleBeforeUnload);
   
    gsap.to('#heading',{
-  scrub: true,
+
   y: 700
 })
     const loadSplineContent = () => {
