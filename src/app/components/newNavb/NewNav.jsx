@@ -51,7 +51,10 @@ const NewNav = () => {
 
            <div id="" className=" menuOne flex gap-3 absolute    top-0 bottom-0 my-auto w-[30vw] z-[-100]">
          
+          <Link href="/about" className="my-auto">
           <p className="my-auto menuNav text-[0.9rem]">About</p>
+
+          </Link>
           <Link href="/projects" className="my-auto">
           <p className="my-auto menuNav text-[0.9rem]">Manufacturing</p>
 
