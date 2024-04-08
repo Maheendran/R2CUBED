@@ -12,7 +12,7 @@ const Page = () => {
    
    <div className=' flex flex-col gap-4'>
   
-    <p className='text-[3.5rem] mt-5'>ABOUT R2CUBED</p>
+    <p className='text-[3rem] mt-5'>ABOUT R2CUBED</p>
     <p className='text-[1.2rem]'>
 
 R2CUBED is visionary in all its senses. We build state-of-the-art solutions leveraging the foundational principles of AI and Surveillance that can be tailored to your frame of reference</p>

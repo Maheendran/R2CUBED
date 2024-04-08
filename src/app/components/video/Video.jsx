@@ -62,7 +62,7 @@ const Video = () => {
                 objectFit: "cover",
                 width: "100%",
                 height: "100%",
-                scale:1.1
+                // scale:1.1
               }}
             ></video>
   <div 
