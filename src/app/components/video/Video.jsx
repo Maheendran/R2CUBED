@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-import { FaPlay } from "react-icons/fa";
+import { FaVolumeMute } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -13,13 +13,8 @@ const Video = () => {
 
   const handleVideoToggle = () => {
     const video = videoRef.current;
-    if (video.paused) {
-      video.play();
-      setVideoPlaying(true);
-    } else {
-      video.pause();
-      setVideoPlaying(false);
-    }
+    video.muted = !video.muted;
+    setVideoPlaying(!videoPlaying)
   };
 
   const [videoPlaying, setVideoPlaying] = useState(false);
@@ -54,7 +49,7 @@ const Video = () => {
           overflow-hidden   rounded-[20px] md:h-[83vh] 
         "
         >
-          <div className="  h-full w-full  ">
+          <div className="  h-full w-full relative  ">
             <video
               ref={videoRef}
               initial={{ opacity: 0 }}
@@ -68,19 +63,21 @@ const Video = () => {
                 height: "100%",
               }}
             ></video>
+  <div 
+            onClick={handleVideoToggle}
+            className={`cursor-pointer  absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
+          >
+            {!videoPlaying && (
+              <div className="absolute bg-black right-0 top-0 border border-gray-600 z-20 flex p-4  items-center justify-center rounded-full text-white  play_btn ">
+                <span className="absolute flex  right-0 top-0 z-[-1] h-full w-full animate-ping rounded-full bg-green-300 bg-opacity-20 delay-300 duration-1000"></span>
+                <FaVolumeMute size={"1rem"} className="m-auto" />
+              </div>
+            )}
           </div>
 
-          <div 
-            onClick={handleVideoToggle}
-            className={`cursor-pointer absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
-          >
-            {/* {!videoPlaying && (
-              <div className="absolute z-20 flex p-4  items-center justify-center rounded-full text-white  play_btn h-[6rem] w-[6rem]">
-                <span className="absolute flex  right-0 top-0 z-[-1] h-full w-full animate-ping rounded-full bg-green-300 bg-opacity-20 delay-300 duration-1000"></span>
-                <FaPlay size={"3rem"} className="m-auto" />
-              </div>
-            )} */}
           </div>
+
+        
         </div>
 
         {/* <div className="bg-red-300 w-full h-full"> */}
