@@ -53,7 +53,7 @@ const Video = () => {
             <video
               ref={videoRef}
               initial={{ opacity: 0 }}
-              src="/R2C1.mp4"
+              src="/R2C2.mp4"
               loop
               muted
               
