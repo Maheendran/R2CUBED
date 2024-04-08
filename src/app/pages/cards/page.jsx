@@ -26,7 +26,7 @@ class ImageSlider extends React.Component {
 
         return (
         
-            <div className="slider-container">
+            <div className="slider-container common">
                 <div className="slider-images">
                     {images.map((imageaa, index) => (
                         <div key={index} 

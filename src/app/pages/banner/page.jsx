@@ -302,7 +302,7 @@ const Page = () => {
           </div>
         </div>
         {/* ================  second page  ====================== */}
-        <div className="two w-full h-fit flex flex-col sm:flex-row  ">
+        <div className="two w-full h-fit flex flex-col sm:flex-row  common ">
           <div className="w-full sm:w-1/2 h-[50vh] sm:h-screen  relative">
             {/* <svg viewBox="0 0 200 200" >
               <path
@@ -353,11 +353,11 @@ const Page = () => {
           </div>
         </div>
         {/* ===============   third page  =========================================================== */}
-        <div className="third w-full h-fit mainbg relative overflow-hidden ">
+        <div className="third common w-full h-fit mainbg relative overflow-hidden ">
           <Video />
         </div>
         {/* ================  fourth page  ====================== */}
-        <div className="w-full h-[120vh] flex  justify-center  mt-5">
+        <div className="w-full common h-[120vh] flex  justify-center  mt-5">
           <Card />
         </div>
                 {/* ================  fifth page  ====================== */}

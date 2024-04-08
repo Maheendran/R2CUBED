@@ -6,127 +6,72 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Video = () => {
-  // const [state, setState] = useState(true);
+  const [state, setState] = useState(true);
 
-  // const [videoOpen, setvideoOpen] = useState(false);
-  // const videoRef = useRef();
+  const [videoOpen, setvideoOpen] = useState(false);
+  const videoRef = useRef();
 
-  // const [videoPlaying, setVideoPlaying] = useState(false);
+  const handleVideoToggle = () => {
+    const video = videoRef.current;
+    if (video.paused) {
+      video.play();
+      setVideoPlaying(true);
+    } else {
+      video.pause();
+      setVideoPlaying(false);
+    }
+  };
 
-  // const handleVideoToggle = () => {
-  //   const video = videoRef.current;
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
-  //   if (video.paused) {
-  //     // video.play();
-  //     setVideoPlaying(true);
-  //   } else {
-  //     // video.pause();
-  //     setVideoPlaying(false);
-  //   }
-  // };
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+  useEffect(() => {
 
-  // const { ref, inView } = useInView({
-  //   threshold: 0.1,
-  // });
-  // useEffect(() => {
-
-  //   if (inView) {
-  //     // setVideoPlaying(true);
-  //     if(videoRef.current){
-  //       videoRef.current.play();
-  //     }
+    if (inView) {
+      // setVideoPlaying(true);
+      if(videoRef.current){
+        videoRef.current.play();
+      }
     
 
-  //     if(videoPlaying){
-  //       setVideoPlaying(true);
-  //     }
-  //   }
-  //   if (!inView) {
-  //     // setVideoPlaying(false);
-  //     videoRef.current.pause();
-  //     if(videoPlaying){
-  //       setVideoPlaying(false);
-  //     }
-  //   }
-  // }, [inView]);
+    }
+    if (!inView) {
+      
+      videoRef.current.pause();
 
-
-  // ========================
-  const [autoPlay, setAutoPlay] = useState(false);
-  const [muted, setMuted] = useState(true);
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const videoElement = videoRef.current;
-      const bounding = videoElement.getBoundingClientRect();
-      const isInViewport = (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-      if (isInViewport) {
-        setAutoPlay(true);
-      } else {
-        setAutoPlay(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const toggleMute = () => {
-    setMuted(!muted);
-  };
-
-  const handleVideoClick = () => {
-    setMuted(false);
-  };
+    }
+  }, [inView]);
 
   return (
-    <div className="w-full mainbg  relative">
+    <div className="w-full mainbg  relative  ">
       <div className="w-full h-[13.5vh] "></div>
-      <div className="w-full  h-[95.5vh]  relative" >
+      <div className="w-full  h-[95.5vh]  relative flex  justify-center  m-auto" >
         <div
-        // ref={ref}
-          className="m-auto  mt-[2rem]    z-20 w-[88%] sm:w-[85%] h-[300px]
-          overflow-hidden   rounded-[20px] md:h-[85vh] 
-          absolute right-0 top-0 bottom-0 left-0"
+        ref={ref}
+          className="m-auto     z-20 w-[89%] sm:w-[86%] h-[300px]
+          overflow-hidden   rounded-[20px] md:h-[83vh] 
+        "
         >
           <div className="  h-full w-full  ">
-            {/* <video
+            <video
               ref={videoRef}
               initial={{ opacity: 0 }}
               src="/R2C1.mp4"
               loop
-              muted={videoPlaying}
+              muted
               className=" w-full mx-auto h-full video-banner  object-cover object-center"
               style={{
                 objectFit: "cover",
                 width: "100%",
                 height: "100%",
               }}
-            ></video> */}
-            <video
-        ref={videoRef}
-        autoPlay={autoPlay}
-        muted={muted}
-        controls
-        style={{ width: '100%' }}
-        onClick={handleVideoClick}
-      >
-        <source src="/R2C1.mp4" type="video/mp4" />
-
-      </video>
-      <button onClick={toggleMute}>{muted ? 'Unmute' : 'Mute'}</button>
+            ></video>
           </div>
 
           <div 
-            // onClick={handleVideoToggle}
+            onClick={handleVideoToggle}
             className={`cursor-pointer absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-primary bg-opacity-90`}
           >
             {/* {!videoPlaying && (
@@ -138,13 +83,13 @@ const Video = () => {
           </div>
         </div>
 
-        <div>
-          <span className="  absolute left-0 sm:left-[-3.5rem] top-0">
+        {/* <div className="bg-red-300 w-full h-full"> */}
+          <span className="  absolute left-0  top-0">
             <svg
               className="w-[10rem] h-[10rem] sm:w-[30rem] sm:h-[20rem]"
-              viewBox="0 0 50 79"
+              viewBox="0 0 120 79"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            
             >
               <circle
                 cx="47.7119"
@@ -316,14 +261,13 @@ const Video = () => {
               />
             </svg>
           </span>
-          <span className="absolute  sm:bottom-[2rem] right-[-5vw] z-10">
+          <span className="absolute  bottom-0 right-[-2.5rem] z-10">
             <svg
-              className="w-[10rem] h-[10rem] sm:w-[30rem] sm:h-[20rem]"
-              // width="50"
-              // height="79"
-              viewBox="0 0 50 79"
+              className=" w-[10rem] h-[10rem] sm:w-[30rem] sm:h-[20rem]"
+          
+              viewBox="0 0 1 79"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+         
             >
               <circle
                 cx="47.7119"
@@ -495,7 +439,7 @@ const Video = () => {
               />
             </svg>
           </span>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
