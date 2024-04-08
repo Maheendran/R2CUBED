@@ -70,7 +70,7 @@ const Video = () => {
             {!videoPlaying && (
               <div className="absolute bg-black right-0 top-0 border border-gray-600 z-20 flex p-4  items-center justify-center rounded-full text-white  play_btn ">
                 <span className="absolute flex  right-0 top-0 z-[-1] h-full w-full animate-ping rounded-full bg-green-300 bg-opacity-20 delay-300 duration-1000"></span>
-                <FaVolumeMute size={"1rem"} className="m-auto" />
+                <FaVolumeMute size={"0.7rem"} className="m-auto" />
               </div>
             )}
           </div>
