@@ -356,3 +356,19 @@ animation: slideright 0.5s linear forwards 1;
     transition: 1s ease-in-out;
 
   }
+  .contactForm{
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.413);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  .contactForm:hover{
+    background-color: rgb(0, 0, 0);
+  }
+  .contactInput ::placeholder{
+  color: rgb(255, 255, 255);
+  }
+  .contactInput:focus {
+    outline: none;
+  }
+  
