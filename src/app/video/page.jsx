@@ -7,28 +7,7 @@ import NewNav from "../components/newNavb/NewNav";
 const Page = () => {
   const [state, setState] = useState(true);
 
-  //   setState(true);
 
-  //   // dotSvg
-  //   if (inView) {
-
-  //     videoHead.start({
-  //       transform: "translateX(0rem)",
-  //       transition: {
-  //         duration: 1.5,
-  //       },
-  //     });
-  //   }
-  //   if (!inView) {
-  //     videoHead.start({
-  //       transform: "translateX(10rem)",
-  //       scale: "0rem",
-  //       transition: {
-  //         duration: 1.3,
-  //       },
-  //     });
-  //   }
-  // }, [inView]);
 
   const [videoOpen, setvideoOpen] = useState(false);
   const videoRef = useRef();
