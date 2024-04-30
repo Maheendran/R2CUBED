@@ -30,76 +30,69 @@ const Page = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const hasSplineLoaded =  localStorage.getItem('splineLoaded');
-   
-     
+    const hasSplineLoaded = localStorage.getItem("splineLoaded");
+
     const handleBeforeUnload = () => {
-      localStorage.removeItem('splineLoaded');
+      localStorage.removeItem("splineLoaded");
     };
 
-    window.addEventListener('beforeunload', handleBeforeUnload);
-  
-   gsap.to('#heading',{
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
-  y: 700
-})
+    gsap.to("#heading", {
+      y: 700,
+    });
     const loadSplineContent = () => {
+      const canvas = canvasRef.current;
 
-        const canvas = canvasRef.current;
-  
-    const spline = new Application(canvas);
-  
-    spline
-      .load("https://prod.spline.design/GW6AzN9x5JiUUTXf/scene.splinecode")
-      .then(() => {
-        setTimeout(() => {
-          setLoading(false);
-      
-          localStorage.setItem('splineLoaded', 'true');
-        }, 1500);
-        setSplineLoading(false);
-      }).then(()=>{
-        setTimeout(()=>{
-   gsap.timeline()
-            .to("#heading",  {
-              delay:2.5,
-              y: 0,
-              ease: "power2.out"
-            })
-            .to("#playBtn",{
-              ease: "power2.out",
-              opacity:1
-            })
-        },1000)
-      
-      })
-      .catch((error) => {
-        console.error("Error loading scene:", error);
-      });
+      const spline = new Application(canvas);
+
+      spline
+        .load("https://prod.spline.design/GW6AzN9x5JiUUTXf/scene.splinecode")
+        .then(() => {
+          setTimeout(() => {
+            setLoading(false);
+
+            localStorage.setItem("splineLoaded", "true");
+          }, 1500);
+          setSplineLoading(false);
+        })
+        .then(() => {
+          setTimeout(() => {
+            gsap
+              .timeline()
+              .to("#heading", {
+                delay: 2.5,
+                y: 0,
+                ease: "power2.out",
+              })
+              .to("#playBtn", {
+                ease: "power2.out",
+                opacity: 1,
+              });
+          }, 1000);
+        })
+        .catch((error) => {
+          console.error("Error loading scene:", error);
+        });
+    };
+
+    loadSplineContent();
+
+    if (hasSplineLoaded === "true") {
+      return setFinalLoading(false);
     }
-
-
-loadSplineContent();
-
-    if (hasSplineLoaded ==="true") {
-    return  setFinalLoading(false)
-    }
-
-
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-  
-
 
   // =================
   // useEffect(() => {
   //   const loadSplineContent = () => {
   //     const canvas = canvasRef.current;
   //     const spline = new Application(canvas);
-  
+
   //     spline
   //       .load("https://prod.spline.design/GW6AzN9x5JiUUTXf/scene.splinecode")
   //       .then(() => {
@@ -122,26 +115,38 @@ loadSplineContent();
   //         console.error("Error loading scene:", error);
   //       });
   //   };
-  
+
   //   const hasSplineLoaded = localStorage.getItem('splineLoaded') || false;
-  
+
   //   if (!hasSplineLoaded) {
   //     alert('aaaaaaaa')
   //     loadSplineContent();
   //     localStorage.setItem('splineLoaded', 'true');
   //   }
-  
+
   //   return () => {
   //     // Clean up any resources if needed
   //   };
   // }, []);
-  
+
   // ============ first animation===============
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  
- 
+
+    var tl = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".two",
+          start: "0% 100%",
+          end: "100% 0%",
+          scrub: true,
+        },
+      })
+
+      .to("#heading", {
+        letterSpacing: "3rem",
+      });
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".two",
@@ -149,20 +154,7 @@ loadSplineContent();
         end: "100% 0%",
         scrub: true,
       },
-    })
-
-    .to("#heading",{
-  letterSpacing:"3rem",
-
-})
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".two",
-        start: "0% 100%",
-        end: "100% 0%",
-        scrub: true,
-      },
-    })
+    });
     tl.to("#fanta", {
       y: "100%",
       x: "-25vw",
@@ -265,7 +257,6 @@ loadSplineContent();
   // ====================
 
   useEffect(() => {
-
     gsap.to(".cursor", {
       left: "-10rem",
       top: "-10rem",
@@ -299,7 +290,6 @@ loadSplineContent();
   };
 
   const handleMouseLeave = (e) => {
-  
     gsap.to(".parentBox", {
       scale: 0.9,
     });
@@ -322,26 +312,25 @@ loadSplineContent();
   return (
     <>
       {/* splineloading &&  && loading  */}
-      {finalloading &&
+      {finalloading && (
         <Loading
           setFinalLoading={setFinalLoading}
           splineloading={splineloading}
           loading={loading}
         />
-}
+      )}
 
       <div
         id="main"
-        className="relative text-white mainbg max-w-[100vw] h-fit overflow-hidden "
+        className="relative text-white mainbg max-w-[100vw] h-fit overflow-hidden  "
       >
         <div className="one w-full h-screen relative">
           <div className="absolute z-[100] overflow-hidden  ">
             <div className="">
-
-              <p id="heading" className=" text-[13rem] font-bold ">R2
-              <span className="text-[#b7141c]">CUBE</span>D</p>
-
-             
+              <p id="heading" className=" text-[13rem] font-bold ">
+                R2
+                <span className="text-[#b7141c]">CUBE</span>D
+              </p>
             </div>
           </div>
 
@@ -352,7 +341,7 @@ loadSplineContent();
           <div className="w-full h-screen  relative z-[1000000]">
             <Link href="/video">
               <div
-id="playBtn"
+                id="playBtn"
                 ref={parentRef}
                 className="opacity-0 parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[3rem]  bottom-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
                 onMouseEnter={handleMouseEnter}
@@ -367,7 +356,7 @@ id="playBtn"
                     ref={arrowRef}
                     size={"3.9rem"}
                   />
-                  <p className=" m-auto text-[1.3rem]">Play </p>
+                  <p className=" m-auto text-[1.3rem]">Demo </p>
                 </div>
 
                 <div className=" cursor bg-red-300" ref={cursorRef}></div>
@@ -385,9 +374,9 @@ id="playBtn"
                 transform="translate(100 100)"
               />
             </svg> */}
-<img src="/DIS.png" className="w-full h-full" alt="" />
-            <Link href="/form">
-              <div 
+            <img src="/DIS.png" className="w-full h-full" alt="" />
+            <Link href="/enquiry">
+              <div
                 ref={parentRef}
                 className="parentBox absolute cursor-pointer  justify-center 
                overflow-hidden z-[1000] right-[1rem]  bottom-[1rem]  m-auto flex parent
@@ -416,7 +405,16 @@ id="playBtn"
             <p className="text-[4rem]">Discover Our Story</p>
             <div className="w-[90%] bgblur h-fit p-4 text-[0.9rem] ">
               <p>
-              R2C specializes in Deep Tech Solutions for Manufacturing, covering areas such as IIoT, Energy Management, AI, ML, Computer Vision-enabled analytics, and AR & VR Simulation Solutions. We ensure high Uptime and perform Predictive Analytics using Sensor Data tracking, correlation, trend analysis, anomaly detection, and causal inferencing to keep Downtime low while improving throughput and productivity. Our solutions are comprehensive, end-to-end, scalable, and deliver unparalleled ROI. Connect with us to share your business needs and discover how we can make a difference for you with our solutions.
+                R2C specializes in Deep Tech Solutions for Manufacturing,
+                covering areas such as IIoT, Energy Management, AI, ML, Computer
+                Vision-enabled analytics, and AR & VR Simulation Solutions. We
+                ensure high Uptime and perform Predictive Analytics using Sensor
+                Data tracking, correlation, trend analysis, anomaly detection,
+                and causal inferencing to keep Downtime low while improving
+                throughput and productivity. Our solutions are comprehensive,
+                end-to-end, scalable, and deliver unparalleled ROI. Connect with
+                us to share your business needs and discover how we can make a
+                difference for you with our solutions.
               </p>
             </div>
           </div>
@@ -434,7 +432,7 @@ id="playBtn"
         <div className="w-full common h-[120vh] flex  justify-center  mt-5">
           <Card />
         </div>
-                {/* ================  fifth page  ====================== */}
+        {/* ================  fifth page  ====================== */}
         <Footer />
       </div>
     </>
