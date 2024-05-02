@@ -11,7 +11,7 @@ const Page = () => {
       <div className="w-full h-fit   flex justify-between relative">
         <div className="w-full h-fit   flex justify-center">
 
-          <div className="w-[85%] text-justify   relative h-fit p-[3rem] text-black m-auto ">
+          <div className="w-[90%] text-justify   relative h-fit p-[3rem] text-black m-auto ">
             <div className=" flex flex-col w-[60%] gap-4 ">
               <p className="text-[1.4rem]   leading-[2.3rem]">
                 <span className="bg-black text-white p-2 ml-[6rem]">
@@ -33,7 +33,7 @@ const Page = () => {
        
       </div>
 
-      <div className="w-full h-[96vh]  relative mt-[1.5rem]  ">
+      <div className="w-full h-[96vh]  relative mt-[2.3rem]  ">
       <p className="text-[1.5rem] text-center absolute left-0 right-0 ">
           Introducing our flagship product, 'Sensol' , also known as  
            <span className="bg-black text-white p-2 ml-2 ">  'Sensor to

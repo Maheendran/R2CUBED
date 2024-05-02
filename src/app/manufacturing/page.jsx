@@ -2,6 +2,7 @@ import React from "react";
 import NewNav from "../components/newNavb/NewNav";
 import Link from 'next/link'
 import Footer from "../components/footer/Footer";
+import Circle from "../components/circle/Circle";
 const Page = () => {
   return (
     <>
@@ -123,7 +124,7 @@ the fly.
   
   <p>The end result is early detection of potential failures, allowing for planned maintenance
 windows ahead of unplanned downtime. This leads to:</p>
-<div className="mx-auto   my-[2rem]">
+{/* <div className="mx-auto   my-[2rem]">
     <ul className="flex flex-col gap-[1.8rem] manufact_ul  font-semibold">
     <li>Boosted Productivity
 </li>
@@ -134,8 +135,8 @@ windows ahead of unplanned downtime. This leads to:</p>
 <li>
 Simplified Compliance</li>
 </ul>
-</div>
-
+</div> */}
+<Circle/>
 <p>
 This comprehensive solution includes IIOT solutions, Energy Management solutions, Machine Vision
 Solutions, and utilizes ML, AI, and various levels of Manufacturing Metaverse features.
