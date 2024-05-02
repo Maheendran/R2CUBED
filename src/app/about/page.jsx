@@ -7,12 +7,13 @@ const Page = () => {
     <>
  
           <NewNav />
-  
-      <div className="w-full h-[81.5vh]   flex justify-between">
-        <div className="w-[55%] h-full   flex justify-center">
-          <div className="w-[100%] text-justify  relative h-[70%]  p-[3rem] text-black m-auto ">
-            <div className=" flex flex-col gap-4">
-              <p className="text-[1.4rem]  leading-[2.3rem]">
+  <div className="w-full h-[20vh]"></div>
+      <div className="w-full h-fit   flex justify-between relative">
+        <div className="w-full h-fit   flex justify-center">
+
+          <div className="w-[85%] text-justify   relative h-fit p-[3rem] text-black m-auto ">
+            <div className=" flex flex-col w-[60%] gap-4 ">
+              <p className="text-[1.4rem]   leading-[2.3rem]">
                 <span className="bg-black text-white p-2 ml-[6rem]">
                   R2Cubed
                 </span>{" "}
@@ -24,15 +25,15 @@ const Page = () => {
                 applications
               </p>
             </div>
-            
-          </div>
-        </div>
-        <div className="w-[45%] h-[80%] my-auto  ">
+            <div className="w-[35%] h-full my-auto   absolute right-0 top-0 ">
           <img className="w-full h-full" src="/2.png" alt="" />
         </div> 
+          </div>
+        </div>
+       
       </div>
 
-      <div className="w-full h-[96vh]  relative  ">
+      <div className="w-full h-[96vh]  relative mt-[1.5rem]  ">
       <p className="text-[1.5rem] text-center absolute left-0 right-0 ">
           Introducing our flagship product, 'Sensol' , also known as  
            <span className="bg-black text-white p-2 ml-2 ">  'Sensor to
