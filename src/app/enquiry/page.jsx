@@ -107,13 +107,15 @@ const Page = () => {
     setDiscriptionValue(e.target.value);
   };
   return (
-    <>
+    <div className="bg-black">
       <NewNav />
-
+  
       <form ref={form} onSubmit={sendEmail} className="bg-black">
+     
         <div className="w-[40%] mx-auto px-[2rem] h-fit text-white ">
           <div >
-          <p className="text-[2rem] text-center mb-[1rem]">What are you searching for ?</p>
+          <p className="text-[2.5rem] mb-[2rem] bg-black text-white  ">What are you searching for ?</p>
+
             <p className="text-[1.7rem]">
               Identify Your Industry
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
@@ -452,7 +454,7 @@ const Page = () => {
        </div>}
       </form>
    
-    </>
+    </div>
   );
 };
 
