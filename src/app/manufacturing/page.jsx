@@ -120,7 +120,7 @@ the fly.
         />
       </div>
       {/* =========== */}
-      <div className="w-full bg-black text-white h-fit flex flex-col  relative  text-[1.5rem] p-[3rem]">
+      <div className="w-full bg-red-300 text-white h-fit flex flex-col  relative  text-[1.5rem] p-[3rem]">
   
   <p>The end result is early detection of potential failures, allowing for planned maintenance
 windows ahead of unplanned downtime. This leads to:</p>
@@ -142,7 +142,7 @@ This comprehensive solution includes IIOT solutions, Energy Management solutions
 Solutions, and utilizes ML, AI, and various levels of Manufacturing Metaverse features.
 </p>
 
-<img className="absolute right-0 top-0 bottom-0 my-auto w-[40%]  h-[50vh]" src="/10.png" alt="" />
+{/* <img className="absolute right-0 top-0 bottom-0 my-auto w-[40%]  h-[50vh]" src="/10.png" alt="" /> */}
 
 </div>
 
