@@ -61,7 +61,7 @@ const Page = () => {
                 <video
                   ref={videoRef}
                   initial={{ opacity: 0 }}
-                  src="/video1.mp4"
+                  src="/R2.mp4"
                   loop
                   muted
                   className="w-full mx-auto h-full video-banner  object-cover object-center"
@@ -69,7 +69,7 @@ const Page = () => {
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    scale: 1.3,
+                
                   }}
                 ></video>
               </div>
