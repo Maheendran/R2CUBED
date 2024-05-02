@@ -18,12 +18,12 @@ const Circle = () => {
                   ' Easier Upskilling ',
                   'Simplified Compliance'];
   return (
-    <div className="carousel border text-white relative w-[50%] mx-auto my-[4rem]">
+    <div className="carousel border text-white relative w-[65%] mx-auto my-[4rem]">
     <div className='maincircle'>
    <FancyCarousel 
    images={images} 
    setFocusElement={setFocusElement}
-   carouselRadius={180}
+   carouselRadius={150}
       peripheralImageRadius={40}
       centralImageRadius={50}
       focusElementStyling={{border: '2px solid #ba4949'}}
