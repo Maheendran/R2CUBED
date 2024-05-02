@@ -112,7 +112,7 @@ const Page = () => {
   
       <form ref={form} onSubmit={sendEmail} className="bg-black">
      
-        <div className="w-[44%] border mx-auto px-[2rem] h-fit text-white ">
+        <div className="w-[44%]  mx-auto px-[2rem] h-fit text-white ">
           <div >
           <p className="text-[2.3rem] mb-[2rem] bg-black text-white  ">What are you searching for ?</p>
 
