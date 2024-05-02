@@ -27,7 +27,7 @@ const Circle = () => {
       peripheralImageRadius={40}
       centralImageRadius={50}
       focusElementStyling={{border: '2px solid #ba4949'}}
-      autoRotateTime={2}
+      autoRotateTime={1}
       borderWidth={4}
       borderHexColor={'1c364f'}
    />
