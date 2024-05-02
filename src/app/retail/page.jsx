@@ -73,7 +73,7 @@ Pricing Models & Elasticity</p>
 Regular Dashboard Updates"</p>
         <img src="/17.png" className=" mx-auto w-[70%]  h-[80vh] " alt="" />
     </div>
-    <Footer />
+    <Footer routeData={"contact-us"}/>
     </>
   );
 };

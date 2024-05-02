@@ -464,8 +464,8 @@ animation: slideright 0.5s linear forwards 1;
     cursor: pointer;
     font-size: 20px;
     /* border-radius: 0.5em; */
-    background: #ff0101;
-    border: 1px solid #ff0101;
+    background: #b7141c;
+    border: 1px solid #b7141c;
     /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
   }
   
@@ -523,10 +523,6 @@ animation: slideright 0.5s linear forwards 1;
   
   .conatct-bg{
     background-color: rgb(241, 241, 241);
-  }
-  input:checked{
-    background-color: red;
-  color: red;
   }
 
 
