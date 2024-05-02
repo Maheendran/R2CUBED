@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const Circle = () => {
     const [focusElement, setFocusElement] = useState(0);
-    const images = ['/2.png', '/2.png','/4.png','/6.png','/8.png','/10.png','/13.png','/14.png'];
+    const images = ['/Image/1.png', '/Image/2.png','/Image/4.png','/Image/6.png','/Image/3.png','/Image/5.png','/Image/7.png'];
     const info = [ 'Boosted Productivity',
                  'Reduced Downtime',
                   'Optimized Processes',
