@@ -120,7 +120,7 @@ the fly.
         />
       </div>
       {/* =========== */}
-      <div className="w-full bg-red-300 text-white h-fit flex flex-col  relative  text-[1.5rem] p-[3rem]">
+      <div className="w-full bg-black text-white h-fit flex flex-col  relative  text-[1.5rem] p-[3rem]">
   
   <p>The end result is early detection of potential failures, allowing for planned maintenance
 windows ahead of unplanned downtime. This leads to:</p>

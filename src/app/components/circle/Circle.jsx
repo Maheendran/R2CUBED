@@ -18,7 +18,7 @@ const Circle = () => {
                   ' Easier Upskilling ',
                   'Simplified Compliance'];
   return (
-    <div className="carousel border text-white relative w-[65%] mx-auto my-[4rem]">
+    <div className="carousel  text-white relative w-[65%] mx-auto my-[4rem]">
     <div className='maincircle'>
    <FancyCarousel 
    images={images} 
@@ -31,7 +31,7 @@ const Circle = () => {
       borderWidth={4}
       borderHexColor={'1c364f'}
    />
-      <div className=" h-fit absolute bg-green-300
+      <div className=" h-fit absolute text-white
        top-0 right-0 bottom-0 my-auto">
         <p > {info[focusElement]} </p>
       </div>
