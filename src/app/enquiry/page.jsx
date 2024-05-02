@@ -116,7 +116,7 @@ const Page = () => {
           <div >
           <p className="text-[2.3rem] mb-[2rem] bg-black text-white  ">What are you searching for ?</p>
 
-            <p className="text-[1.7rem]">
+            <p className="text-[1.5rem]">
               Identify Your Industry
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
             </p>
@@ -227,7 +227,7 @@ const Page = () => {
           </div>
           {/* ]]]]]]]]]second form]]]]]]]]]]]] */}
           <div>
-            <p className="text-[1.7rem] mt-[2rem]">
+            <p className="text-[1.5rem] mt-[2rem]">
               What are you looking for ?
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
             </p>
@@ -289,7 +289,7 @@ const Page = () => {
           {/* =========third section */}
 
           <div>
-            <p className="text-[1.7rem] mt-[2rem]">
+            <p className="text-[1.5rem] mt-[2rem]">
               When do you need the solutions implemented?
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
             </p>
@@ -331,7 +331,7 @@ const Page = () => {
           {/* =========fourth section = */}
 
           <div>
-            <p className="text-[1.7rem] mt-[2rem]">Budget</p>
+            <p className="text-[1.5rem] mt-[2rem]">Budget</p>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
                 className="w-[1.3rem] h-[1.3rem] my-auto"
@@ -363,7 +363,7 @@ const Page = () => {
 
           {/* ===== five section ===== */}
           <div>
-            <p className="text-[1.7rem] mt-[2rem]">
+            <p className="text-[1.5rem] mt-[2rem]">
               Write a short description of your problem statement and the
               expected solution
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
