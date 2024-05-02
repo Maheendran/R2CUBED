@@ -25,7 +25,7 @@ const Page = () => {
                 applications
               </p>
             </div>
-            <div className="w-[35%] h-full my-auto   absolute right-0 top-0 ">
+            <div className="w-[40%] h-full my-auto   absolute right-0 top-0 ">
           <img className="w-full h-full" src="/2.png" alt="" />
         </div> 
           </div>
