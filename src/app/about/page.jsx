@@ -44,7 +44,7 @@ sm:leading-[2.8rem] ">
         </span>
       </p>
 
-      <div className="w-full  h-fit md:h-[96vh]  relative mt-[1rem] md:mt-[3rem] px-[1rem] flex flex-col-reverse ">
+      <div className="w-full   h-fit md:h-[96vh]  relative mt-[1rem] md:mt-[3rem] px-[1rem] flex flex-col-reverse ">
         {/*  */}
         {/* bg-green-400 sm:bg-red-400 md:bg-blue-400 */}
         <div
@@ -53,7 +53,7 @@ sm:leading-[2.8rem] ">
         >
           <div
             className="w-[90%] m-auto  text-justify z-10 
-          md:text-[1.4rem] leading-[2.3rem]  my-auto"
+          leading-[2.3rem]  my-auto"
           >
             <p>
               Sensol is a business process and methodology pioneered by
