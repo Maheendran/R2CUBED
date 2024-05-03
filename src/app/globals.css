@@ -381,6 +381,7 @@ animation: slideright 0.5s linear forwards 1;
 
 
   /* ========== */
+
   .button2 {
     display: inline-block;
     transition: all 0.2s ease-in;
@@ -395,7 +396,19 @@ animation: slideright 0.5s linear forwards 1;
     border: 1px solid #e8e8e8;
     /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
   }
-  
+  @media only screen and (max-width: 767px) {
+    .button2 {
+      font-size: 1rem;
+      padding: 0.5em 1.5em;
+     
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .button2 {
+      font-size: 1.3rem;
+      padding: 0.6em 1.6em;
+    }
+  }
   .button2:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
