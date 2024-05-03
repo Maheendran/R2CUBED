@@ -53,7 +53,7 @@ const Page = () => {
       </div> 
            <div className="black w-[full] md:hidden 
             h-fit flex p-[1.5rem]">
-          <div className="w-full text-justify z-10 text-[1.5rem]  leading-[2.3rem]  my-auto">
+          <div className="w-full text-justify z-10 text-[1.2rem]  leading-[2.3rem]  my-auto">
         
             <p>
               R2Cube's
