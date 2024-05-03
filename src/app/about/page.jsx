@@ -44,7 +44,7 @@ const Page = () => {
           </span>
         </p>
 
-        <div className="w-full   h-fit md:h-[96vh]  relative mt-[1rem] md:mt-[3rem] px-[1rem] flex flex-col-reverse ">
+        <div className="w-full  h-fit  relative mt-[1rem] md:mt-[3rem] px-[1rem] flex flex-col-reverse ">
           {/*  */}
           {/* bg-green-400 sm:bg-red-400 md:bg-blue-400 */}
           <div
