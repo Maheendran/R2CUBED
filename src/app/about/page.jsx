@@ -13,7 +13,7 @@ const Page = () => {
 
       <div className="w-[90%] text-justify flex  flex-col-reverse  relative h-fit p-[1rem] md:p-[3rem] text-black m-auto ">
         <div className="mt-[1.5rem] sm:mt-0 flex flex-col md:w-[60%] gap-4 ">
-          <p className="text-[1.2rem] md:text-[1.4rem]   leading-[2.3rem]">
+          <p className=" md:text-[1.4rem]   leading-[2.3rem]">
             <span className="bg-black text-white p-2 ml-[6rem]">R2Cubed</span>{" "}
             has extensive experience in the manufacturing vertical, encompassing
             both discrete and continuous operations. Their expertise extends to
@@ -30,7 +30,7 @@ const Page = () => {
         {/* </div> */}
       </div>
       {/* ===============second section=============== */}
-      <p className="text-[1.4rem] md:text-[1.5rem] sm:leading-[2.8rem]  text-center  ">
+      <p className=" w-[85%] md:w-fit  mx-auto text-[1.4rem] md:text-[1.5rem] sm:leading-[2.8rem]  text-center  ">
         Introducing our flagship product, 'Sensol' , also known as
         <span className="bg-black text-white p-2 ml-2 ">
           {" "}
@@ -45,7 +45,8 @@ const Page = () => {
           className="w-full md:w-[60%] 
        h-full flex md:p-[3rem]"
         >
-          <div className="w-[90%] m-auto  text-justify z-10 text-[1.2rem] md:text-[1.4rem]  leading-[2.3rem]  my-auto">
+          <div className="w-[90%] m-auto  text-justify z-10 
+          md:text-[1.4rem] leading-[2.3rem]  my-auto">
             <p>
               Sensol is a business process and methodology pioneered by
               'r2Cubed' (R2C), a California, USA-based IIOT and Deep Tech
