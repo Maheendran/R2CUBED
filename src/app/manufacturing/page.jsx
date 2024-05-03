@@ -9,7 +9,7 @@ const Page = () => {
       <NewNav />
       {/* bg-red-200 sm:bg-green-300 md:bg-blue-300 */}
       <div className="
-       w-full h-[40vh] md:h-[91.5vh]  relative  ">
+       w-full h-[36vh] md:h-[91.5vh]  relative  ">
         
         <div className="hidden md:black w-[60%] md:w-[55%] h-full md:flex p-[3rem]">
           <div className="w-full text-justify z-10 text-[1.5rem]  leading-[2.3rem]  my-auto">
