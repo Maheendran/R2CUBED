@@ -12,10 +12,9 @@ const Page = () => {
         className="w-fit h-fit
          text-[1.2rem] md:text-[1.5rem] sm:leading-[2.8rem] "
       >
-
         <div className="w-[90%] text-justify flex  flex-col-reverse  relative h-fit p-[1rem] md:p-[3rem] text-black m-auto ">
           <div className="mt-[1.5rem] sm:mt-0 flex flex-col md:w-[60%] gap-4 ">
-            <p >
+            <p>
               <span className="bg-black text-white p-2 ml-[6rem]">R2Cubed</span>{" "}
               has extensive experience in the manufacturing vertical,
               encompassing both discrete and continuous operations. Their
@@ -29,10 +28,9 @@ const Page = () => {
           <div className=" w-full md:w-[40%] h-full my-auto xs:relative   md:absolute right-0 top-0 ">
             <img className="w-full h-full" src="/2.png" alt="" />
           </div>
-        
         </div>
         {/* ===============second section=============== */}
-   
+
         <p
           className=" w-[85%] md:w-fit  mx-auto 
       text-center "
@@ -49,7 +47,7 @@ const Page = () => {
           {/* bg-green-400 sm:bg-red-400 md:bg-blue-400 */}
           <div
             className="w-full md:w-[60%] 
-       h-full flex md:p-[3rem]"
+       h-full flex md:p-[3rem] mb-[1.5rem] md:mb-0"
           >
             <div
               className="w-[90%] m-auto  text-justify z-10 
