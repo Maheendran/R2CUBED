@@ -138,7 +138,7 @@ const Page = () => {
           planned maintenance windows ahead of unplanned downtime. This leads
           to:
         </p>
-       <div className=" flex justify-center">
+       <div className="border flex justify-center">
            <Circle />
        </div>
      
