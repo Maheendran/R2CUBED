@@ -7,7 +7,7 @@ const Footer = ({ routeData = "enquiry" }) => {
       <section class="bg-black text-white relative">
         <div class="max-w-screen-xl px-4 py-4 md:py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
          
-          <div class="flex flex-col-reverse text-center md:flex-col justify-center mt-8 space-x-6">
+          <div class="flex flex-col-reverse text-center md:flex-col justify-center mt-8 md:space-x-6">
           
             <a href="#" class=" mx-auto  mt-5 text-gray-400 hover:text-gray-500">
               <svg
@@ -20,7 +20,7 @@ const Footer = ({ routeData = "enquiry" }) => {
               </svg>
             </a>
 
-<div className="relative  md:absolute right-[5%] w-full md:w-[30%] h-fit">
+<div className="relative   md:absolute md:right-[5%] w-full md:w-[30%] h-fit">
    <Link href={`/${routeData}`}>
               <button class="button3 md:absolute right-[5%] h-fit  top-0 bottom-0 w-fit m-auto">
                 Book A Demo
