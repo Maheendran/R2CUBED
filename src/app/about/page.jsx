@@ -55,7 +55,7 @@ const Page = () => {
               className="w-[90%] m-auto  text-justify z-10 
              my-auto"
             >
-              <p className=" text-[1.3rem] md:text-[1.5rem]">
+              <p className=" text-[1.25rem] md:text-[1.5rem]">
                 Sensol is a business process and methodology pioneered by
                 'r2Cubed' (R2C), a California, USA-based IIOT and Deep Tech
                 Company. R2C empowers manufacturing industries to transition
