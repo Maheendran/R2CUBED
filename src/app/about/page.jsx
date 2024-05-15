@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <>
       <NewNav />
-      <div className="w-full sm:h-[10vh] md:h-[20vh]"></div>
+      <div className="w-full sm:h-[10vh] md:h-[10vh] "></div>
       {/*  */}
       <div
         className="w-fit h-fit
@@ -32,7 +32,7 @@ const Page = () => {
         {/* ===============second section=============== */}
 
         <p
-          className=" w-[85%] md:w-fit  mx-auto 
+          className=" w-[85%] md:w-fit mt-[2.5rem]  mx-auto 
       text-center "
         >
           Introducing our flagship product, 'Sensol' , also known as
@@ -42,7 +42,7 @@ const Page = () => {
           </span>
         </p>
 
-        <div className="w-full  h-fit  relative mt-[1rem] md:mt-[3rem] px-[1rem] flex flex-col-reverse ">
+        <div className="w-full  h-fit  relative mt-[1rem] sm:mt-0  px-[1rem] flex flex-col-reverse ">
           {/*  */}
           {/* bg-green-400 sm:bg-red-400 md:bg-blue-400 */}
           <div

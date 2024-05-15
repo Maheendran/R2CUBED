@@ -112,9 +112,9 @@ const Page = () => {
   
       <form ref={form} onSubmit={sendEmail} className="bg-black">
      
-        <div className="w-[44%]  mx-auto px-[2rem] h-fit text-white ">
+        <div className="w-[98%] sm:w-[60%] md:w-[40%]  mx-auto px-[2rem] h-fit text-white ">
           <div >
-          <p className="text-[2.3rem] mb-[2rem] bg-black text-white  ">What are you searching for ?</p>
+          <p className="text-[2rem] md:text-[2.3rem] mb-[2rem] bg-black text-white  ">What are you searching for ?</p>
 
             <p className="text-[1.5rem]">
               Identify Your Industry
@@ -122,7 +122,7 @@ const Page = () => {
             </p>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Manufacturing : Discrete"
@@ -133,7 +133,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Manufacturing : Process"
@@ -144,7 +144,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Oil & Gas"
@@ -153,9 +153,9 @@ const Page = () => {
               />
               <p className="my-auto text-[1.2rem]">Oil & Gas</p>
             </div>
-            <div className="flex mt-2 text-[1.5rem] gap-2">
+            <div className=" flex  mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px]  md:w-[1.5rem] md:h-[1.5rem] my-auto"
                 type="radio"
                 name="industry"
                 value="Gas Plant (Oxygen, Hydrogen, Nitrogen, CO2)"
@@ -171,7 +171,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Food & Beverage"
@@ -182,7 +182,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Power Sector"
@@ -193,7 +193,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Military"
@@ -204,7 +204,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
                 value="Automotive"
@@ -215,14 +215,14 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="industry"
-                value="Building Managemengt"
-                checked={selectedValue === "Building Managemengt"}
+                value="Building Management"
+                checked={selectedValue === "Building Management"}
                 onChange={handleRadioChange}
               />
-              <p className="my-auto text-[1.2rem]">Building Managemengt</p>
+              <p className="my-auto text-[1.2rem]">Building Management</p>
             </div>
           </div>
           {/* ]]]]]]]]]second form]]]]]]]]]]]] */}
@@ -233,7 +233,7 @@ const Page = () => {
             </p>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px]  md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="services"
                 value="Improved Uptime / Productivity"
@@ -249,7 +249,7 @@ const Page = () => {
 
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="services"
                 value="Reduced Downtime"
@@ -260,7 +260,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="services"
                 value="Data driven operational management"
@@ -275,7 +275,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="services"
                 value="Process Simulation"
@@ -288,14 +288,14 @@ const Page = () => {
 
           {/* =========third section */}
 
-          <div>
+          <div >
             <p className="text-[1.5rem] mt-[2rem]">
               When do you need the solutions implemented?
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
             </p>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="solutions"
                 value="30-60 days"
@@ -307,7 +307,7 @@ const Page = () => {
 
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="solutions"
                 value="60-180 days"
@@ -318,7 +318,7 @@ const Page = () => {
             </div>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="solutions"
                 value="12 months"
@@ -334,7 +334,7 @@ const Page = () => {
             <p className="text-[1.5rem] mt-[2rem]">Budget</p>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="budget"
                 value="Budgetted"
@@ -346,7 +346,7 @@ const Page = () => {
 
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
-                className="w-[1.3rem] h-[1.3rem] my-auto"
+                className="w-[20px] h-[20px] md:w-[1.5rem] md:h-[1.5rem]  my-auto"
                 type="radio"
                 name="budget"
                 value="Not in the Budget but need the solution"
@@ -380,8 +380,9 @@ const Page = () => {
           </div>
         </div>
         {/* ========  contact ======== */}
-        <div className="w-full h-fit  my-4 bg-black  flex  p-5 justify-center relative">
-          <div className="w-[70%] h-fit  m-auto flex flex-col mt-2  mt-2-col ">
+        <div className="w-full  h-fit  my-4 bg-black  flex flex-col
+         p-5 justify-center relative">
+          <div className="md:w-[70%]  h-fit  m-auto flex flex-col mt-2  mt-2-col ">
             <div className="w-full  flex mt-2 justify-between ">
               <input
                 type="text"
@@ -425,7 +426,9 @@ const Page = () => {
           </div>
           <button
             type="submit"
-            className="flex justify-center w-[6rem] h-[6rem] border rounded-full absolute bottom-[1rem] right-[1.5rem] bg-white"
+            className="flex mx-auto justify-center md:w-[6rem] md:h-[6rem]
+            w-[4rem] h-[4rem]
+            border rounded-full md:absolute bottom-[1rem] right-[1.5rem] bg-white"
           >
             {messagesent ? (
               <AiOutlineLoading3Quarters
@@ -433,10 +436,9 @@ const Page = () => {
                 size={"1.4rem"}
               />
             ) : (
-              <p className="m-auto text-[1.3rem] cursor-pointer">Send</p>
+              <p className="m-auto text-[1.1rem] md:text-[1.3rem] cursor-pointer">Send</p>
             )}
           </button>
-          {/* <input className="bg-red-300" type="submit" value="Send" /> */}
         </div>
 
         {/* <label>Name</label>

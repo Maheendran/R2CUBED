@@ -11,18 +11,13 @@ const Page = () => {
   return (
     <>
       <NewNav />
-      <div className="w-full h-[128vh]  bg-black  overflow-hidden relative ">
-        <div className="w-full h-[55vh] bg-white text-neutral-800   relative">
+      <div className="w-full h-[110vh]  md:h-[128vh]  bg-black  overflow-hidden relative ">
+        <div className="w-full h-[45vh] md:h-[55vh] bg-white text-neutral-800   relative">
           <img className="w-[50%] mx-auto h-full" src="/contact.png" alt="" />
-          {/* <div className="absolute w-fit h-fit flex justify-center left-0 right-0 m-auto top-0 bottom-0  text-center bg-white/50 p-2 ">
-            <p className="text-[2rem] font-semibold">
-            We’d love to help you!
-            </p>
-           
-          </div> */}
+        
         </div>
 
-        <div className="w-[40%] h-[78vh] flex gap-4  bg-black   p-4 absolute bottom-[1rem] left-0 right-0 mx-auto">
+        <div className=" w-[90%] md:w-[40%] h-[78vh] flex gap-4  bg-black   p-4 absolute bottom-[1rem] left-0 right-0 mx-auto">
           {/* <div className="w-[40%] h-full flex flex-col   gap-4">
             <div className="w-full h-1/3 bg-white border relative">
               <div className="flex gap-4 absolute top-0 right-0 left-0 bottom-0 m-auto  w-fit h-fit">
@@ -83,7 +78,7 @@ const Page = () => {
             >
               <div className="w-full h-full text-black   p-4 rounded-xl flex flex-col justify-between  ">
                 <h2 className="text-[1.4rem] text-center  font-medium title-font">
-                For Contact 
+                How can we help?
                 </h2>
 
                 <div className="relative ">

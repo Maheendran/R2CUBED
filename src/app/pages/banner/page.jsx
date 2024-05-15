@@ -9,11 +9,11 @@ import Loading from "@/app/pages/loading/page";
 import { GoArrowUpRight } from "react-icons/go";
 import { Application } from "@splinetool/runtime";
 import Link from "next/link";
-import Navbar from "@/app/components/navbar/Navbar";
 import Video from "@/app/components/video/Video";
 import NewNav from "@/app/components/newNavb/NewNav";
 import Card from "@/app/pages/cards/page";
 import Footer from "@/app/components/footer/Footer";
+import Carousel from "@/app/components/carousel/Carousel";
 const Page = () => {
   const [splineloading, setSplineLoading] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -61,7 +61,7 @@ const Page = () => {
             gsap
               .timeline()
               .to("#heading", {
-                delay: 2.5,
+                delay: 2,
                 y: 0,
                 ease: "power2.out",
               })
@@ -87,49 +87,118 @@ const Page = () => {
     };
   }, []);
 
-  // =================
+
+
   // useEffect(() => {
-  //   const loadSplineContent = () => {
-  //     const canvas = canvasRef.current;
-  //     const spline = new Application(canvas);
+  //   const screenSize =  window.screen.width ||500;
+  // if(screenSize){
+  // return  handleUpdateScreen(screenSize)}
+    
+  //   });
 
-  //     spline
-  //       .load("https://prod.spline.design/GW6AzN9x5JiUUTXf/scene.splinecode")
-  //       .then(() => {
-  //         setTimeout(() => {
-  //           setLoading(false);
-  //         }, 1500);
-  //         setSplineLoading(false);
-  //       }).then(()=>{
-  //          gsap.timeline()
-  //             .fromTo("#heading", {
-  //               scrub: true,
-  //               y: 700
-  //             }, {
-  //               delay:2.5,
-  //               y: 0,
-  //               ease: "power2.out"
-  //             });
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error loading scene:", error);
-  //       });
-  //   };
-
-  //   const hasSplineLoaded = localStorage.getItem('splineLoaded') || false;
-
-  //   if (!hasSplineLoaded) {
-  //     alert('aaaaaaaa')
-  //     loadSplineContent();
-  //     localStorage.setItem('splineLoaded', 'true');
+  //   const handleUpdateScreen=(screenSize)=>{
+  //     if (screenSize<500) {
+     
+  //       var tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: ".two",
+  //         start: "0% 50%",
+  //         end: "100% 0%",
+  //         scrub: true,
+  //         markers:true
+  //       },
+  //     });
+  //     tl.to("#fanta", {
+  //       // y: "50%",
+      
+  //       ease: "power1.out",
+  //     });
+  //     tl.to("#fanta", {
+  //       y: "100%",
+     
+  //       rotateZ: "0deg",
+  //       ease: "power1.out",
+  //     });
   //   }
+  //     }
+const[trigger,setTrigger]=useState(8)
 
-  //   return () => {
-  //     // Clean up any resources if needed
-  //   };
-  // }, []);
+    // window.addEventListener("resize", ()=>{
+    //   setTrigger(window.innerWidth)
+  
+    // });
+    // console.log(trigger, typeof(trigger),'trigger')
+    
+  useEffect(() => {
+  
+   
+    gsap.registerPlugin(ScrollTrigger);
+  
+    var tl;
+  
+    const handleResize = (trigger) => {
+      const isWindowDefined = typeof window !== 'undefined';
+      const size = isWindowDefined ? window.screen.width : null;
+   
+  
+      if (size < 767) {
+      
+        tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".two",
+            start: "0% 100%",
+            end: "10% 0%",
+            scrub: true,
+          },
+        });
+        tl.to("#fanta", {
+          y: "200%",
+          scale:0.75,
+          rotateZ: "150deg",
+          ease: "power1.out",
+        });
+      
+      }
+       else if(size>768) {
+        tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".two",
+            start: "0% 100%",
+            end: "100% 0%",
+            scrub: true,
+          },
+        });
+        tl.to("#fanta", {
+          y: "100%",
+          x: "-25vw",
+          scale: 1.2,
+          rotateZ: "150deg",
+          ease: "power1.out",
+        });
+        tl.to(
+          "#fanta",
+          {
+            y: "145%",
+            x: "-48vw",
+            scale: 0.11,
+            rotateZ: "0deg",
+            ease: "power1.out",
+          },
+          "-=0.2"
+        );
+      }
+    };
+    
+    window.addEventListener("resize",handleResize() );
 
-  // ============ first animation===============
+  
+  
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  },[trigger]);
+
+   
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -147,28 +216,53 @@ const Page = () => {
       .to("#heading", {
         letterSpacing: "3rem",
       });
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".two",
-        start: "0% 100%",
-        end: "100% 0%",
-        scrub: true,
-      },
-    });
-    tl.to("#fanta", {
-      y: "100%",
-      x: "-25vw",
-      scale: 1.2,
-      rotateZ: "150deg",
-      ease: "power1.out",
-    });
-    tl.to("#fanta", {
-      y: "145%",
-      x: "-48vw",
-      scale: 0.11,
-      rotateZ: "0deg",
-      ease: "power1.out",
-    });
+
+  //     const screenSize =  window.screen.width ||500;
+  // if(screenSize<480){
+
+
+  //     var tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".two",
+  //       start: "0% 100%",
+  //       end: "10% 0%",
+  //       scrub: true,
+  //       markers:true
+  //     },
+  //   });
+  //   tl.to("#fanta", {
+  //     y: "200%",
+  //     rotateZ: "150deg",
+  //     ease: "power1.out",
+  //   });
+
+  // }
+  // else{
+  //   var tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".two",
+  //       start: "0% 100%",
+  //       end: "100% 0%",
+  //       scrub: true,
+  //     },
+  //   });
+  //   tl.to("#fanta", {
+  //     y: "100%",
+  //     x: "-25vw",
+  //     scale: 1.2,
+  //     rotateZ: "150deg",
+  //     ease: "power1.out",
+  //   });
+  //   tl.to("#fanta", {
+  //     y: "145%",
+  //     x: "-48vw",
+  //     scale: 0.11,
+  //     rotateZ: "0deg",
+  //     ease: "power1.out",
+  //   });
+  
+  // }
+
     // navbar
     var tls = gsap
       .timeline({
@@ -180,6 +274,7 @@ const Page = () => {
         },
       })
       .to("#navbar", {
+        opacity:1,
         ease: "power1.out",
         top: 0,
         position: "fixed",
@@ -311,7 +406,6 @@ const Page = () => {
 
   return (
     <>
-      {/* splineloading &&  && loading  */}
       {finalloading && (
         <Loading
           setFinalLoading={setFinalLoading}
@@ -324,17 +418,22 @@ const Page = () => {
         id="main"
         className="relative text-white mainbg max-w-[100vw] h-fit overflow-hidden  "
       >
-        <div className="one w-full h-screen relative">
-          <div className="absolute z-[100] overflow-hidden  ">
-            <div className="">
-              <p id="heading" className=" text-[13rem] font-bold ">
+      
+        <div className="one   w-full h-screen relative">
+          
+          <div className="absolute h-fit bottom-[35vh] md:top-0 my-auto md:bottom-0   z-[100] overflow-hidden  ">
+            
+              <p
+                id="heading"
+                className=" text-[4rem] sm:text-[5rem] md:text-[13rem] font-bold "
+              >
                 R2
                 <span className="text-[#b7141c]">CUBE</span>D
               </p>
-            </div>
+           
           </div>
 
-          <div id="fanta" className=" w-[100vw] h-[100vh] absolute   z-[50] ">
+          <div id="fanta" className=" w-[100vw] h-[50vh] md:h-[100vh] absolute  top-0  z-[50] ">
             <canvas ref={canvasRef} id="canvas3d"></canvas>
           </div>
 
@@ -343,7 +442,8 @@ const Page = () => {
               <div
                 id="playBtn"
                 ref={parentRef}
-                className="opacity-0 parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[3rem]  bottom-[10vh]  m-auto flex parent w-[10rem] h-[10rem] border border-gray-500 rounded-full  "
+                className="opacity-0  parentBox absolute cursor-pointer  justify-center  overflow-hidden z-[1000] right-[3rem] 
+                 bottom-[10vh]  m-auto flex parent w-[6rem] h-[6rem] md:w-[10rem] md:h-[10rem] border border-gray-500 rounded-full  "
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -352,11 +452,11 @@ const Page = () => {
                   className="w-fit  text-center arrowparent h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
                 >
                   <GoArrowUpRight
-                    className="mx-auto arrow"
+                    className="mx-auto arrow text-[2rem] md:text-[3.9rem] "
                     ref={arrowRef}
-                    size={"3.9rem"}
+                    // size={"3.9rem"}
                   />
-                  <p className=" m-auto text-[1.3rem]">Demo </p>
+                  <p className=" m-auto text-[1rem] md:text-[1.3rem]">Demo </p>
                 </div>
 
                 <div className=" cursor bg-red-300" ref={cursorRef}></div>
@@ -364,46 +464,42 @@ const Page = () => {
             </Link>
           </div>
         </div>
+
+
         {/* ================  second page  ====================== */}
         <div className="two w-full h-fit flex flex-col sm:flex-row  common ">
-          <div className="w-full sm:w-1/2 h-[50vh] sm:h-screen  relative">
-            {/* <svg viewBox="0 0 200 200" >
-              <path
-                fill="#A80A09"
-                d="M41.5,-59.5C49.8,-51.1,49.7,-33.6,50.7,-19.2C51.7,-4.7,53.8,6.7,52.4,18.9C51.1,31.1,46.3,44.1,36.9,52.9C27.6,61.8,13.8,66.5,-2.5,70C-18.8,73.4,-37.7,75.6,-52.5,68.5C-67.3,61.5,-78.2,45.2,-84.5,27.1C-90.9,9,-92.7,-10.8,-80.5,-19.3C-68.3,-27.8,-42.1,-24.8,-26.3,-30.8C-10.6,-36.8,-5.3,-51.7,5.7,-59.5C16.6,-67.3,33.2,-68,41.5,-59.5Z"
-                transform="translate(100 100)"
-              />
-            </svg> */}
+          <div className="w-full  sm:w-1/2 :h-[50vh]  relative">
+           
             <img src="/DIS.png" className="w-full h-full" alt="" />
             <Link href="/enquiry">
               <div
                 ref={parentRef}
                 className="parentBox absolute cursor-pointer  justify-center 
                overflow-hidden z-[1000] right-[1rem]  bottom-[1rem]  m-auto flex parent
-                w-[10rem] h-[10rem] border border-gray-400 rounded-full  "
+               w-[6.5rem] h-[6.5rem] md:w-[10rem] md:h-[10rem] border border-gray-400 rounded-full  "
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <div
                   ref={textRefTwo}
-                  className=" arrowparent w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
+                  className=" arrowparent text-wrap w-fit h-fit m-auto absolute top-0 bottom-0 left-0 right-0  z-[1000]"
                 >
                   <GoArrowUpRight
                     ref={arrowRef}
-                    className="mx-auto arrow"
-                    size={"3.9rem"}
+                    className="mx-auto arrow text-[2rem] md:text-[3.9rem] "
+                 
                   />
-                  <p className=" m-auto text-[1.1rem]">Start Project</p>
+                  <p className=" m-auto  text-[0.9rem] md:text-[1.1rem]">Start Project</p>
                 </div>
 
-                <div className=" cursor bg-red-300" ref={cursorRef}></div>
+                <div className=" cursor " ref={cursorRef}></div>
               </div>
             </Link>
           </div>
 
           <div className="w-full sm:w-1/2  h-fit my-auto relative ">
-            <p className="text-[4rem]">Discover Our Story</p>
-            <div className="w-[90%] bgblur h-fit p-4 text-[0.9rem] ">
+            <p className="text-[2rem] md:text-[4rem] px-4 sm:px-0">Discover Our Story</p>
+            <div className="m-2 md:w-[90%] bgblur h-fit p-4 text-[0.9rem] ">
               <p>
                 R2C specializes in Deep Tech Solutions for Manufacturing,
                 covering areas such as IIoT, Energy Management, AI, ML, Computer
@@ -419,18 +515,22 @@ const Page = () => {
             </div>
           </div>
 
-          <div id="navbar" className=" flex justify-between w-full navbg ">
-            {/* <Navbar/> */}
+          <div id="navbar" className=" opacity-0 flex justify-between w-full navbg ">
+          
             <NewNav />
           </div>
         </div>
         {/* ===============   third page  =========================================================== */}
-        <div className="third common w-full h-fit mainbg relative overflow-hidden ">
+        <div className="third    common w-full h-fit mainbg relative overflow-hidden ">
           <Video />
         </div>
         {/* ================  fourth page  ====================== */}
-        <div className="w-full common h-[120vh] flex  justify-center  mt-5">
+        <div className="hidden md:block w-[90%] mx-auto common h-[120vh]    mt-5">
           <Card />
+        </div>
+        <div className="block md:hidden w-[95%] mx-auto common h-fit    mt-5">
+        
+          <Carousel/>
         </div>
         {/* ================  fifth page  ====================== */}
         <Footer />
@@ -440,36 +540,3 @@ const Page = () => {
 };
 
 export default Page;
-
-{
-  /* ===================== */
-}
-{
-  /* <div className='w-full h-screen relative bg-black text-white'>
-
-
-    <div className='absolute z-[100] '>
-      <Spline scene='https://prod.spline.design/BLU4qtr1FsC0jYoE/scene.splinecode'></Spline>
-    </div>
-
-
-      <div id='fantaTwo'   className='  z-[1]  w-[100vw] h-[100vh] absolute  bottom-0  '>
-    <Spline className='w-full h-full  ' id='box' scene='https://prod.spline.design/ThZV623jazw2LSZ1/scene.splinecode'/> 
-      
-</div>
-</div>
-<div className='relative modelTwo  bg-black   overflow-hidden  flex justify-between m-auto h-screen z-[-1] text-black   '>
-  
-
-  <div className='leftbox absolute  top-0 bottom-0 w-[45%] h-fit my-auto '>
-    <h1 className='text-[3rem] text-center mt-5 text-neutral-200'>Subheading-1</h1>
-    <p className='text-[1rem] text-justify text-neutral-400 '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, excepturi sed, itaque placeat id natus soluta veniam obcaecati qui a laborum laboriosam dolorem illum labore sit, voluptates commodi neque dolores tempore temporibus deleniti? Nobis, ratione hic error quis cum neque nulla laudantium nostrum sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum totam quia non! Labore, neque! Amet voluptatem illo similique recusandae! Ex quaerat quibusdam asperiores, ducimus tempore magni labore. Tenetur voluptas, quos ex repellendus provident mollitia laboriosam adipisci alias a impedit, cum accusamus rerum delectus eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni aspernatur quod distinctio.</p>
-  </div>
-  <div className='rightbox absolute    right-[1rem] bottom-0 top-0  w-[45%] h-fit my-auto '>
-    <h1 className='text-[3rem] text-center mt-5 text-neutral-200'>Subheading-2</h1>
-    <p className='text-[1rem] text-justify text-neutral-400'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, excepturi sed, itaque placeat id natus soluta veniam obcaecati qui a laborum laboriosam dolorem illum labore sit, voluptates commodi neque dolores tempore temporibus deleniti? Nobis, ratione hic error quis cum neque nulla laudantium nostrum sit nihil dolorum quisquam enim quaerat, eaque ex sequi, harum totam quia non! Labore, neque! Amet voluptatem illo similique recusandae! Ex quaerat quibusdam asperiores, ducimus tempore magni labore. Tenetur voluptas, quos ex repellendus provident mollitia laboriosam adipisci alias a impedit, cum accusamus rerum delectus eaque facilis veniam quia laborum incidunt ea assumenda! Eos magni aspernatur quod distinctio.</p>
-  </div>
-
-
-</div> */
-}

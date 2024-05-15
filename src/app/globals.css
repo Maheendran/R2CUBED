@@ -8,9 +8,9 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-*{
+/* *{
   font-family: "Outfit", sans-serif;
-}
+} */
 
 .mainbg{
     background-color: rgb(0, 0, 0);
@@ -92,7 +92,9 @@ nav a, i{
 nav i{
     font-size: 1.5vw;
 }
-
+#heading{
+  font-weight: 700;
+}
 .one{
     display: flex;
     align-items: center;
@@ -108,7 +110,6 @@ nav i{
 
 #fanta{
     position: absolute;
-    /* width: 40%; */
     z-index: 2;
     transition: all cubic-bezier(0.19, 1, 0.22, 1)0.5s;
 }
@@ -229,7 +230,7 @@ color: white;
     transition: 0.5s ease-in-out;
   }
 .menuOne{
-  right: -30rem;
+  right: -28rem;
   transition: 0.5s ease-in-out;
 }
   .menubtn:hover .menuOne {
@@ -240,7 +241,7 @@ color: white;
 
   .menuNav:hover{
     transition: 0.5s ease-in-out;
-color:  rgb(172, 223, 234);
+color:  #b7141c;
   }
   .bgblur{
     background-color: rgba(255, 255, 255, 0.132);
@@ -249,7 +250,10 @@ color:  rgb(172, 223, 234);
   }
 
   /* ========================= */
-
+.carousel_text{
+  font-size: 0.3rem;
+  color: white;
+}
   .slider-container{
     margin-top: 100px;
     width: 100%;
@@ -274,7 +278,7 @@ color:  rgb(172, 223, 234);
     border-radius: 6px;
   }
   .slider-img{
-    width: 110px;
+    width: 20%;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
@@ -320,14 +324,15 @@ color:  rgb(172, 223, 234);
     display: none;
   }
   .details p{
+
     font-family: "Outfit", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-align: left;
     line-height: 33px;
     text-align: left;
-    color: #2e1e1e;
-    text-transform: uppercase;
+    color: #ffffff;
+    /* text-transform: uppercase; */
     transition: 0.7s ease;
     display: none;
   }
@@ -338,9 +343,18 @@ color:  rgb(172, 223, 234);
   .slider-img.active h1{
      display: none;
   }
-  .slider-img.active .details p, .slider-img.active .details h2{
-    display: block;
+  .details img{
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.5rem;
+    display: none;
   }
+  .slider-img.active .details p, .details img,.slider-img.active .details h2{
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  
 
 
   /* ========= */
@@ -538,6 +552,19 @@ animation: slideright 0.5s linear forwards 1;
     background-color: rgb(241, 241, 241);
   }
 
+/* menu open */
+.slideIn{
+transform: translateX(0);
+transition: 0.4s ease-in-out;
 
-  /* circle */
-  
+}
+
+.slideOut{
+
+  transition: 0.4s ease-in-out;
+  transform: translateX(-100rem);
+}
+
+.swiper-button-next{
+  color: white;
+}

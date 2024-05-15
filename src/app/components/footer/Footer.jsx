@@ -9,7 +9,7 @@ const Footer = ({ routeData = "enquiry" }) => {
          
           <div class="flex flex-col-reverse text-center md:flex-col justify-center mt-8 md:space-x-6">
           
-            <a href="#" class=" mx-auto  mt-5 text-gray-400 hover:text-gray-500">
+            <a target="blank" href="https://www.linkedin.com/company/r2-cubed/" class=" mx-auto  mt-5 text-gray-400 hover:text-gray-500">
               <svg
                 class="w-7 h-8"
                 aria-hidden="true"

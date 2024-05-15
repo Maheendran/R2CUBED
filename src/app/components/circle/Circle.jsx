@@ -8,43 +8,50 @@ import "react-fancy-circular-carousel/FancyCarousel.css";
 import { useState } from "react";
 
 const Circle = () => {
-  const screenSize = window.screen.width;
   const [childImg, setChildImg] = useState(40);
   const [carouselRadius, setCarouselRadius] = useState(150);
   const [centralImageRadius, setCentralImageRadius] = useState(50);
-  useEffect(() => {
-    console.log(screenSize, "screenSize");
 
-    if (screenSize < 480) {
-      setChildImg(25);
-      setCarouselRadius(120);
-      setCentralImageRadius(50);
-      return
+  useEffect(() => {
+    const isWindowDefined = typeof window !== 'undefined';
+  const screenSize = isWindowDefined ? window.screen.width : null;
+if(screenSize && isWindowDefined){
+return  handleUpdateScreen(screenSize,isWindowDefined)}
+  
+  }, [childImg]);
+
+  const handleUpdateScreen=(isWindowDefined,screenSize)=>{
+  if (isWindowDefined && screenSize) {
+      if (screenSize < 480) {
+        setChildImg(25);
+        setCarouselRadius(120);
+        setCentralImageRadius(50);
+        return;
+      }
+      if (screenSize < 766) {
+        setChildImg(30);
+        setCarouselRadius(140);
+        setCentralImageRadius(55);
+        return;
+      }
     }
-    if (screenSize < 766) {
-    
-      setChildImg(30);
-      setCarouselRadius(140);
-      setCentralImageRadius(55);
-      return
-    }
-  }, [screenSize]);
+  }
   const [focusElement, setFocusElement] = useState(0);
   const images = [
-    "/Image/1.png",
-    "/Image/7.png",
-    "/Image/5.png",
-    "/Image/1.png",
-    "/Image/3.png",
-    "/Image/7.png",
+    "/manufacture/1.jpg",
+    "/manufacture/2.jpg",
+    "/manufacture/3.jpg",
+    "/manufacture/4.jpg",
+    "/manufacture/5.jpg",
+    "/manufacture/6.jpg",
   ];
   const info = [
     "Boosted Productivity",
     "Reduced Downtime",
     "Optimized Processes",
     "Improved Quality",
-    " Easier Upskilling ",
-    "Simplified Compliance",
+    " Easier Upskilling of theWorkforce ",
+    "Simplified Compliance"
   ];
   return (
     <div className="carousel relative  w-full md:w-[45%] lg:w-[65%] h-fit md:h-[50vh]    text-white   mx-auto my-[4rem]">
@@ -58,7 +65,9 @@ const Circle = () => {
           focusElementStyling={{ border: "2px solid #ba4949" }}
           autoRotateTime={1}
           borderWidth={4}
+          
           borderHexColor={"1c364f"}
+
         />
       </div>
 
