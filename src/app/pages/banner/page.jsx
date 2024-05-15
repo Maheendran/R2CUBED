@@ -456,7 +456,7 @@ const[trigger,setTrigger]=useState(8)
                     ref={arrowRef}
                     // size={"3.9rem"}
                   />
-                  <p className=" m-auto text-[1rem] md:text-[1.3rem]">Demo </p>
+                  <p className=" m-auto text-[1rem] md:text-[1.3rem]">Overview </p>
                 </div>
 
                 <div className=" cursor bg-red-300" ref={cursorRef}></div>
