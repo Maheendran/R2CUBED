@@ -3,8 +3,15 @@ import React, { useRef, useState } from "react";
 import NewNav from "../components/newNavb/NewNav";
 import emailjs from "@emailjs/browser";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { message } from "antd";
+import { useRouter } from "next/navigation";
+
 const Page = () => {
+  const router = useRouter();
+
   const form = useRef();
+  const [messageApi, contextHolder] = message.useMessage();
+
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedServiceValue, setSelectedServicesValue] = useState("");
   const [solutionsValue, setSolutionsValue] = useState("");
@@ -12,43 +19,68 @@ const Page = () => {
   const [discriptionValue, setDiscriptionValue] = useState("");
   const [messagesent, setMessageSent] = useState(false);
   const [warning, setWarning] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
+
     setMessageSent(true);
 
-
-    if(!selectedValue || !selectedServiceValue|| !solutionsValue ||
-      !discriptionValue ){
-         setMessageSent(false);
-          setWarning(true)
-          return setTimeout(()=>{
-            setWarning(false)
-          },2000)
-      }
+    if (
+      !selectedValue ||
+      !selectedServiceValue ||
+      !solutionsValue ||
+      !discriptionValue
+    ) {
+      messageApi.open({
+        type: "error",
+        content: "Some values missing",
+      });
+      return setMessageSent(false);
+    }
 
     const formData = new FormData(form.current);
-  
+
     const data = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
-    if(!data.country || ! data.email_id ||!data.from_name || !data.mobile){
-     
-    
-     setMessageSent(false);
-     setWarning(true)
-     return setTimeout(()=>{
-       setWarning(false)
-     },2000)
-      }
-    
+
+    if (!data.country || !data.email_id || !data.from_name || !data.mobile) {
+      messageApi.open({
+        type: "error",
+        content: "Fill contact form",
+      });
+
+      return setMessageSent(false);
+    }
 
 
-    console.log(data,'formDataformData')
+    if(data.email_id){
+const validated=validateEmail(data.email_id)
+if(!validated){
+  messageApi.open({
+    type: "error",
+    content: "Enter valid email",
+  });
+  return setMessageSent(false);
+}
 
+    }
+
+    if(data.mobile){
+      const validated=validatePhoneNumber(data.mobile)
+if(!validated){
+  messageApi.open({
+    type: "error",
+    content: "Enter valid mobile number",
+  });
+  return setMessageSent(false);
+}
+
+      
+    }
     const dummyForm = document.createElement("form");
 
-    // Populate the form with data
     Object.keys(data).forEach((key) => {
       const input = document.createElement("input");
       input.type = "hidden";
@@ -59,12 +91,6 @@ const Page = () => {
 
     form.current.appendChild(dummyForm);
 
-    // data["industry"] = selectedValue;
-    // data["services"] = selectedServiceValue;
-    // data["solutions"] = solutionsValue;
-    // data["budget"] = budgetValue;
-    // data["description"] = discriptionValue;
-
     emailjs
       .sendForm(
         "service_f7oqhwa",
@@ -74,16 +100,32 @@ const Page = () => {
       )
       .then(
         (result) => {
+          messageApi.open({
+            type: "success",
+            content: "message sent successfully",
+          });
           setMessageSent(false);
-          
+          form.current.reset()
+          setTimeout(() => {
+            router.push("/");
+          }, 1500);
         },
         (error) => {
           setMessageSent(false);
           console.log(error.text);
         }
       );
-     
   };
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function validatePhoneNumber(phoneNumber) {
+  const re = /^\+?[1-9]\d{1,14}$/;
+  return re.test(String(phoneNumber));
+}
+
 
   // ===================
 
@@ -108,13 +150,15 @@ const Page = () => {
   };
   return (
     <div className="bg-black">
+      {contextHolder}
       <NewNav />
-  
+
       <form ref={form} onSubmit={sendEmail} className="bg-black">
-     
         <div className="w-[98%] sm:w-[60%] md:w-[40%]  mx-auto px-[2rem] h-fit text-white ">
-          <div >
-          <p className="text-[2rem] md:text-[2.3rem] mb-[2rem] bg-black text-white  ">What are you searching for ?</p>
+          <div>
+            <p className="text-[2rem] md:text-[2.3rem] mb-[2rem] bg-black text-white  ">
+              What are you searching for ?
+            </p>
 
             <p className="text-[1.5rem]">
               Identify Your Industry
@@ -288,7 +332,7 @@ const Page = () => {
 
           {/* =========third section */}
 
-          <div >
+          <div>
             <p className="text-[1.5rem] mt-[2rem]">
               When do you need the solutions implemented?
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
@@ -370,6 +414,7 @@ const Page = () => {
             </p>
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
+              
                 className="w-[80%] h-[3rem] border-b-2 border-gray-500 text-white bg-black"
                 type="text"
                 name="description"
@@ -380,18 +425,22 @@ const Page = () => {
           </div>
         </div>
         {/* ========  contact ======== */}
-        <div className="w-full  h-fit  my-4 bg-black  flex flex-col
-         p-5 justify-center relative">
+        <div
+          className="w-full  h-fit  my-4 bg-black  flex flex-col
+         p-5 justify-center relative"
+        >
           <div className="md:w-[70%]  h-fit  m-auto flex flex-col mt-2  mt-2-col ">
             <div className="w-full  flex mt-2 justify-between ">
               <input
+              required
                 type="text"
                 name="from_name"
                 placeholder="Fullname"
                 className="p-4 mb-3 w-[45%] text-[1.9rem] bg-black text-white border-0 border-b-2"
               />
 
-<input
+              <input
+                 required
                 type="text"
                 name="email_id"
                 placeholder="Email"
@@ -400,14 +449,15 @@ const Page = () => {
             </div>
 
             <div className="w-full flex justify-between ">
-             
               <input
-                type="text"
+                 required
+                type="number"
                 name="mobile"
                 placeholder="Phone"
                 className="p-4 mb-3 w-[45%] text-[1.9rem] bg-black text-white border-0 border-b-2"
               />
-               <input
+              <input
+                 required
                 type="text"
                 name="country"
                 placeholder="Country"
@@ -424,9 +474,10 @@ const Page = () => {
               />
             </div> */}
           </div>
+          
           <button
             type="submit"
-            className="flex mx-auto justify-center md:w-[6rem] md:h-[6rem]
+            className="flex  mx-auto justify-center md:w-[6rem] md:h-[6rem]
             w-[4rem] h-[4rem]
             border rounded-full md:absolute bottom-[1rem] right-[1.5rem] bg-white"
           >
@@ -436,7 +487,9 @@ const Page = () => {
                 size={"1.4rem"}
               />
             ) : (
-              <p className="m-auto text-[1.1rem] md:text-[1.3rem] cursor-pointer">Send</p>
+              <p className="m-auto text-[1.1rem] md:text-[1.3rem] cursor-pointer">
+                Send
+              </p>
             )}
           </button>
         </div>
@@ -450,12 +503,7 @@ const Page = () => {
         <label>Message</label>
         <textarea name="message" />
        */}
-   {warning &&    <div className="w-full flex px-4">
-       <p className="text-red-400 bg-black ms-auto">Fill all columns</p>
-
-       </div>}
       </form>
-   
     </div>
   );
 };
