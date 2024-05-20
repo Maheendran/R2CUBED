@@ -143,7 +143,7 @@ const Page = () => {
            <Circle />
        </div>
      
-        <p>
+        <p className="text-justify">
           This comprehensive solution includes IIOT solutions, Energy Management
           solutions, Machine Vision Solutions, and utilizes ML, AI, and various
           levels of Manufacturing Metaverse features.
