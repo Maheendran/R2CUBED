@@ -15,7 +15,7 @@ const NewNav = () => {
         <div
           className={`${
             isOpen ? "fixed z-[1000000]" : "relative"
-          } flex justify-between w-full  z-[10000000] h-[8.5vh]
+          } flex justify-between w-full  z-[10000000] h-[9vh]
       navbg
       overflow-hidden
        `}
