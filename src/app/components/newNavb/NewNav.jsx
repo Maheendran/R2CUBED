@@ -20,11 +20,11 @@ const NewNav = () => {
       overflow-hidden
        `}
         >
-          <div className="   w-[9rem] h-[7.8vh]  my-auto   px-2">
+          <div className="   w-[12.5rem] h-[7.8vh]  my-auto   px-2">
             <Link href="/">
               <img
                 id="logo"
-                className=" w-full h-full  py-[2px]"
+                className="  w-full h-full "
                 src="./navbarlogo1.jpg"
                 alt=""
               />

@@ -94,8 +94,10 @@ if(!validated){
       {contextHolder}
       <div className="w-full h-[110vh]  md:h-[128vh]  bg-black  overflow-hidden relative ">
         <div className="w-full h-[45vh] md:h-[55vh] bg-white text-neutral-800   relative">
-          <img className="w-[50%] mx-auto h-full" src="/contact.png" alt="" />
-        
+          <img className=" w-fyll md:w-[50%] mx-auto h-full" src="/contact.png" alt="" />
+          
+          {/* <img className="w-[90%] mx-auto h-full" src="/ContactMob.png" alt="" /> */}
+
         </div>
 
         <div className=" w-[90%] md:w-[40%] h-[78vh] flex gap-4  bg-black   p-4 absolute bottom-[1rem] left-0 right-0 mx-auto">
