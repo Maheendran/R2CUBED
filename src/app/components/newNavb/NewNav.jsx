@@ -20,7 +20,7 @@ const NewNav = () => {
       overflow-hidden
        `}
         >
-          <div className="  border  w-[12.5rem] h-[6.5vh]  my-auto   px-2">
+          <div className="    w-[12.5rem] h-full  my-auto   px-2">
             <Link href="/">
               <img
                 id="logo"
