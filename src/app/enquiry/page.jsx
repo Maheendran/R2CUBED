@@ -408,11 +408,11 @@ function validatePhoneNumber(phoneNumber) {
 
           {/* ===== five section ===== */}
           <div>
-            <p className="text-[1.5rem] mt-[2rem]">
+            {/* <p className="text-[1.5rem] mt-[2rem]">
               Write a short description of your problem statement and the
               expected solution
               <span className="text-red-600 text-[1.4rem] ml-1">*</span>
-            </p>
+            </p> */}
             <div className="flex mt-2 text-[1.5rem] gap-2">
               <input
               
