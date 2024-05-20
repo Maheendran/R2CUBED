@@ -99,7 +99,7 @@ const Page = () => {
         
         <div className=" md:w-[70%] relative  h-full flex">
           <div className="w-[90%] md:w-[60%] h-fit md:absolute top-[2rem] right-0 bottom-0 left-0 
-            m-auto text-justify z-10 text-[1rem] md:text-[1.5rem]  leading-[2.3rem]  my-auto">
+            m-auto text-justify z-10  md:text-[1.5rem]  leading-[2.3rem]  my-auto">
             <p>
               Whether a facility is at Industry 1.0 or Industry 4.0 level,
               R2Cube's Industrial Metaverse offerings will
