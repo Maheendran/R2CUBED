@@ -133,7 +133,7 @@ const Page = () => {
       </div>
 
       {/* =========== */}
-      <div className="w-full bg-black text-white h-fit flex flex-col  relative text-[1.2rem] md:text-[1.5rem] p-[1.5rem] md:p-[3rem]">
+      <div className="w-full bg-black text-white h-fit flex flex-col  relative text-[1.5rem] p-[1.5rem] md:p-[3rem]">
         <p className="text-justify">
           The end result is early detection of potential failures, allowing for
           planned maintenance windows ahead of unplanned downtime. This leads
