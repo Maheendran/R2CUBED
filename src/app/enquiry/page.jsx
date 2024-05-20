@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { message } from "antd";
 import { useRouter } from "next/navigation";
+import Footer from "../components/footer/Footer";
 
 const Page = () => {
   const router = useRouter();
@@ -465,14 +466,7 @@ function validatePhoneNumber(phoneNumber) {
               />
             </div>
 
-            {/* <div className="w-full ">
-              <input
-                type="text"
-                name="country"
-                placeholder="Country"
-                className="p-4 mb-3 w-full text-[1.9rem] bg-black text-white border-0 border-b-2"
-              />
-            </div> */}
+          
           </div>
           
           <button
@@ -494,16 +488,9 @@ function validatePhoneNumber(phoneNumber) {
           </button>
         </div>
 
-        {/* <label>Name</label>
-        <input type="text" name="from_name" />
-        <label>Email</label>
-        <input type="email" name="email_id" />
-        <label>Mobile</label>
-        <input type="number" name="mobile" />
-        <label>Message</label>
-        <textarea name="message" />
-       */}
+        
       </form>
+      <Footer/>
     </div>
   );
 };
