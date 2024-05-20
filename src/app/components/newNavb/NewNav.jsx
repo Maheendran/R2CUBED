@@ -26,7 +26,7 @@ const NewNav = () => {
               <img
                 id="logo"
                 className="  w-full h-full "
-                src="./navbarlogo1.jpg"
+                src="./navbarlogo1.png"
                 alt=""
               />
            

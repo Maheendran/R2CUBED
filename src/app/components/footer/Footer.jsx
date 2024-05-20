@@ -32,7 +32,8 @@ const Footer = ({ routeData = "enquiry" }) => {
           </div>
 
           <p class="mt-8  text-xs leading-6 text-center text-gray-400">
-            © 2024 R2cubed, All rights reserved.
+           
+            © Copyright 2017-2024 All Rights Reserved by R2cubed
           </p>
         </div>
       </section>
