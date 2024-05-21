@@ -3,6 +3,9 @@ import NewNav from "../components/newNavb/NewNav";
 import Link from "next/link";
 import Footer from "../components/footer/Footer";
 import Circle from "../components/circle/Circle";
+import sixthImage from '../../../public/6.png'
+import eightImage from '../../../public/8.png'
+import Image from "next/image";
 const Page = () => {
   return (
     <>
@@ -25,15 +28,19 @@ const Page = () => {
         </div>
 
         <div className="absolute w-[70%] right-0 top-0  h-full">
-          <img
-            src="/6.png"
+       
+    
+          <Image
+            src={sixthImage}
             className=" absolute w-full right-0 top-0  h-full"
             alt=""
+       
           />
-          <img
-            src="/6.png"
+          <Image
+            src={sixthImage}
             className=" absolute w-full right-0 top-0  h-full"
             alt=""
+       
           />
         </div>
 
@@ -118,13 +125,13 @@ const Page = () => {
       
       <div className=" relative md:absolute
        w-full h-[50vh] md:w-[42%] md:h-[70%] z-50 right-0 bottom-0  my-auto">
-        <img
-          src="/8.png"
+        <Image
+          src={eightImage}
           className="absolute w-full h-full z-50 right-0 bottom-0  my-auto"
           alt=""
         />
-        <img
-          src="/8.png"
+        <Image
+          src={eightImage}
           className="absolute w-full h-full z-50 right-0 bottom-0 my-auto"
           alt=""
         />

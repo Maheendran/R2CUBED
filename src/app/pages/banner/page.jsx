@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { lazy, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Spline from "@splinetool/react-spline";
+import Image from "next/image";
+import dis from '../../../../public/DIS.png'
 import Loading from "@/app/pages/loading/page";
 
 import { GoArrowUpRight } from "react-icons/go";
@@ -88,46 +88,8 @@ const Page = () => {
   }, []);
 
 
-
-  // useEffect(() => {
-  //   const screenSize =  window.screen.width ||500;
-  // if(screenSize){
-  // return  handleUpdateScreen(screenSize)}
-    
-  //   });
-
-  //   const handleUpdateScreen=(screenSize)=>{
-  //     if (screenSize<500) {
-     
-  //       var tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: ".two",
-  //         start: "0% 50%",
-  //         end: "100% 0%",
-  //         scrub: true,
-  //         markers:true
-  //       },
-  //     });
-  //     tl.to("#fanta", {
-  //       // y: "50%",
-      
-  //       ease: "power1.out",
-  //     });
-  //     tl.to("#fanta", {
-  //       y: "100%",
-     
-  //       rotateZ: "0deg",
-  //       ease: "power1.out",
-  //     });
-  //   }
-  //     }
 const[trigger,setTrigger]=useState(8)
 
-    // window.addEventListener("resize", ()=>{
-    //   setTrigger(window.innerWidth)
-  
-    // });
-    // console.log(trigger, typeof(trigger),'trigger')
     
   useEffect(() => {
   
@@ -217,53 +179,6 @@ const[trigger,setTrigger]=useState(8)
         letterSpacing: "3rem",
       });
 
-  //     const screenSize =  window.screen.width ||500;
-  // if(screenSize<480){
-
-
-  //     var tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".two",
-  //       start: "0% 100%",
-  //       end: "10% 0%",
-  //       scrub: true,
-  //       markers:true
-  //     },
-  //   });
-  //   tl.to("#fanta", {
-  //     y: "200%",
-  //     rotateZ: "150deg",
-  //     ease: "power1.out",
-  //   });
-
-  // }
-  // else{
-  //   var tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".two",
-  //       start: "0% 100%",
-  //       end: "100% 0%",
-  //       scrub: true,
-  //     },
-  //   });
-  //   tl.to("#fanta", {
-  //     y: "100%",
-  //     x: "-25vw",
-  //     scale: 1.2,
-  //     rotateZ: "150deg",
-  //     ease: "power1.out",
-  //   });
-  //   tl.to("#fanta", {
-  //     y: "145%",
-  //     x: "-48vw",
-  //     scale: 0.11,
-  //     rotateZ: "0deg",
-  //     ease: "power1.out",
-  //   });
-  
-  // }
-
-    // navbar
     var tls = gsap
       .timeline({
         scrollTrigger: {
@@ -470,7 +385,13 @@ const[trigger,setTrigger]=useState(8)
         <div className="two w-full h-fit flex flex-col sm:flex-row  common ">
           <div className="w-full  sm:w-1/2 :h-[50vh]  relative">
            
-            <img src="/DIS.png" className="w-full h-full" alt="" />
+            <Image 
+        
+            src={dis}  
+             className="w-full h-full" 
+          
+             alt="earth" 
+           />
             <Link href="/enquiry">
               <div
                 ref={parentRef}

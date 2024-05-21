@@ -1,7 +1,9 @@
 import React from "react";
 import NewNav from "../components/newNavb/NewNav";
 import Footer from "../components/footer/Footer";
-
+import Image from "next/image";
+import two from '../../../public/2.png'
+import four from '../../../public/4.png'
 const Page = () => {
   return (
     <>
@@ -26,7 +28,7 @@ const Page = () => {
           </div>
 
           <div className=" w-full md:w-[40%] h-full my-auto xs:relative   md:absolute right-0 top-0 ">
-            <img className="w-full h-full" src="/2.png" alt="" />
+            <Image className="w-full h-full" src={two} alt="" />
           </div>
         </div>
         {/* ===============second section=============== */}
@@ -69,13 +71,13 @@ const Page = () => {
             className="relative   h-[40vh]  md:absolute w-full
  right-0 top-0  md:h-[100%]"
           >
-            <img
-              src="/4.png"
+            <Image
+              src={four}
               className="absolute w-full right-0 top-0  h-[100%]"
               alt=""
             />
-            <img
-              src="/4.png"
+            <Image
+            src={four}
               className="  absolute w-full right-0 top-0  h-[100%]"
               alt=""
             />
